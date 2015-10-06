@@ -81,8 +81,8 @@
 %ELENCO DEI LISTATI/CODICI
 \makeatletter
 \newcommand\listofcodes{%
- %\iffrontmatter\else\frontmattertrue\fi
- %\if@openright\cleardoublepage\else\clearpage\fi
+ \iffrontmatter\else\frontmattertrue\fi
+ \if@openright\cleardoublepage\else\clearpage\fi
  % change the meaning of \chapter in a group
  \begingroup\def\chapter##1{\@schapter}
  \phantomsection % for the hyperlink
