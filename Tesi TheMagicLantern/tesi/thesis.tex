@@ -1,4 +1,9 @@
-%CLASSE DOCUMENTO - LINGUA E DIMENSIONE FONT
+% !TEX encoding = IsoLatin
+
+%%%%%%% La riga soprastante serve per configurare gli editor TeXShop, TeXWorks
+%%%%%%% e TeXstudio per gestire questo file con la codifica IsoLatin o Latin 1
+%%%%%%% o ISO 8859-1. Se si vuole usare un'altra codifica si veda sotto.
+%%%%%%%
 \documentclass[12pt,classica, english]{toptesi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,8 +81,8 @@
 %ELENCO DEI LISTATI/CODICI
 \makeatletter
 \newcommand\listofcodes{%
- \iffrontmatter\else\frontmattertrue\fi
- \if@openright\cleardoublepage\else\clearpage\fi
+ %\iffrontmatter\else\frontmattertrue\fi
+ %\if@openright\cleardoublepage\else\clearpage\fi
  % change the meaning of \chapter in a group
  \begingroup\def\chapter##1{\@schapter}
  \phantomsection % for the hyperlink
@@ -95,8 +100,18 @@
   /Author   (Dario Randazzo)
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% LISTA DEI CAPITOLI DA INCLUDERE - PERSONALIZZARE
+\includeonly{%
+	chapters/GameDesign
+	%	appendixes/appendix,
+}
+
+% FILE DI BIBLIOGRAFIA
+\bibliography{bibliography} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
 % FRONTESPIZIO - PERSONALIZZARE
 % ELIMINATE LE VOCI CHE NON VI SERVONO
 
@@ -136,12 +151,13 @@
 %\NomeTutoreAziendale{Company tutors\\FeelGood Inc}
 
 % CANDIDATO - DICITURA (MANTENERE I DUE PUNTI)
-\CandidateName{Candidato:}
+\CandidateName{Candidati:}
 % SECONDO CANDIDATO - ELIMINARE O DECOMMENTARE
 %secondocandidato{Bombo de Bombis}
 
 % CANDIDATO - NOME E COGNOME
-\candidato{Fabio Mignini}
+\candidato{Corrado Raffaelli}
+\secondocandidato{Dario Randazzo}
 
 % LOGO UNIVERSITA
 \logosede{images/logo_polito}
@@ -151,20 +167,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% LISTA DEI CAPITOLI DA INCLUDERE - PERSONALIZZARE
-\includeonly{%
-	chapters/GameDesign
-%	appendixes/appendix,
-}
 
-% FILE DI BIBLIOGRAFIA
-\bibliography{bibliography} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % INIZIO DOCUMENTO
-\begin{document}
+%\begin{document}
 \english
 
 \frontespizio
