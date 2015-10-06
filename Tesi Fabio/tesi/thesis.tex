@@ -1,0 +1,304 @@
+%CLASSE DOCUMENTO - LINGUA E DIMENSIONE FONT
+\documentclass[12pt,classica, english]{toptesi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INCLUSIONE PACCHETTI
+\usepackage[utf8]{inputenc} %utf8
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{blindtext}
+\usepackage{graphicx,wrapfig}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\usepackage{varioref}
+\usepackage{url}
+\usepackage{array}
+\usepackage{paralist}{\obeyspaces\global\let =\space}
+\usepackage{verbatim} 
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage[pass]{geometry}
+\usepackage[figuresright]{rotating}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage[babel]{csquotes}
+\usepackage{hyperref}
+
+
+\usepackage[backend=bibtex]{biblatex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CONFIGURAZIONE LINK E RIFERIMENTI
+\hypersetup{%
+    pdfpagemode={UseOutlines},
+    bookmarksopen,
+    pdfstartview={FitH},
+    colorlinks,
+    linkcolor={black}, %COLORE DEI RIFERIMENTI AL TESTO
+    citecolor={blue}, %COLORE DEI RIFERIMENTI ALLE CITAZIONI
+    urlcolor={blue} %COLORI DEGLI URL
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CONFIGURAZIONE LISTATI/CODICE - CANCELLARE SE NON NECESSARIO
+% PYTHON - BIANCO E NERO
+\lstset{%
+	captionpos=b,
+	language=Python,
+	basicstyle =\small\ttfamily,
+	keywordstyle=\color{black}\bfseries,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=lines,
+	numbers=left,
+	numberstyle=\footnotesize,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FRENCHSPACING ABILITATO - CANCELLARE PER SPAZIATURA ALL'INGLESE
+%\frenchspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DEFINIZIONE SEZIONI IN NUMERAZIONE ROMANA
+%ELENCO DEI LISTATI/CODICI
+\makeatletter
+\newcommand\listofcodes{%
+ \iffrontmatter\else\frontmattertrue\fi
+ \if@openright\cleardoublepage\else\clearpage\fi
+ % change the meaning of \chapter in a group
+ \begingroup\def\chapter##1{\@schapter}
+ \phantomsection % for the hyperlink
+ \lstlistoflistings 
+ \endgroup
+} 
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INFORMAZIONI PDF - PERSONALIZZARE
+\pdfinfo{%
+  /Title    (User-oriented Network Service on a Multi-domain Infrastructure)
+  /Author   (Fabio Mignini)
+
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FRONTESPIZIO - PERSONALIZZARE
+% ELIMINATE LE VOCI CHE NON VI SERVONO
+
+% UNIVERSITA - NOME
+\ateneo{Politecnico di Torino}
+
+% FACOLTA - DICITURA
+\FacoltaDi{III Facoltà di }
+% FACOLTA - NOME
+\facolta{Ingegneria}
+
+% CORSO DI LAUREA - DICITURA (MANTENERE LO SPAZIO)
+\CorsoDiLaureaIn{Corso di Laurea in }
+% CORSO DI LAUREA - NOME
+\corsodilaurea{Ingegneria Informatica}
+
+% TIPOLOGIA TESI
+\TesiDiLaurea{Tesi di Laurea Magistrale}
+
+% TITOLO
+\titolo{User-oriented Network Service on a Multi-domain Infrastructure}
+
+% SOTTOTITOLO
+%\sottotitolo{How to write meaningful titles}
+
+% RELATORE/I - DICITURA
+\AdvisorName{Relatore}
+% RELATORE - PROF. NOME E COGNOME
+\relatore{prof.\ Fulvio Risso}
+% RELATORE AGGIUNTIVO - PROF NOME E COGNOME
+% SE SI HA SOLO UN RELATORE ELIMINARE E CAMBIARE Advisors in Advisor
+%\secondorelatore{prof.\ Neo Cortex}
+
+% TUTORE AZIENDALE - TITOLO NOME E COGNOME
+%\tutoreaziendale{Ing. Pug Dog}
+% TUTORE AZIENDALE - DICITURA//AZIENDA
+%\NomeTutoreAziendale{Company tutors\\FeelGood Inc}
+
+% CANDIDATO - DICITURA (MANTENERE I DUE PUNTI)
+\CandidateName{Candidato:}
+% SECONDO CANDIDATO - ELIMINARE O DECOMMENTARE
+%secondocandidato{Bombo de Bombis}
+
+% CANDIDATO - NOME E COGNOME
+\candidato{Fabio Mignini}
+
+% LOGO UNIVERSITA
+\logosede{images/logo_polito}
+
+% DATA - MESE ANNO
+\sedutadilaurea{Dicembre 2014}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% LISTA DEI CAPITOLI DA INCLUDERE - PERSONALIZZARE
+\includeonly{%
+	chapters/chapter_intro,
+	chapters/chapter_the_problem,
+	chapters/chapter_the_state_of_the_art,
+	chapters/chapter_tools,
+	chapters/chapter_exposition,
+	chapters/service_graph,
+	chapters/use_case,
+	chapters/prototype_implementation,
+	chapters/prototype_validation,
+	chapters/chapter_conclusions,
+%	appendixes/appendix,
+}
+
+% FILE DI BIBLIOGRAFIA
+\bibliography{bibliography} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INIZIO DOCUMENTO
+\begin{document}
+\english
+
+\frontespizio
+
+%\paginavuota
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%INTERLINEA - DEFAULT 1 - NON ESAGERATE, NON SUPERATE MAI 1.3 ;)
+\interlinea{1.3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+\begin{comment}
+% DEDICA - PERSONALIZZARE
+% VSPACE - PROPORZIONE USATA PER CENTRATURA VERTICALE DEL TESTO
+% FLUSHRIGHT - ALLINEAMENTO ORIZZONTALE A DESTRA
+\vspace*{\stretch{1}}
+\begin{flushright}
+\noindent
+grazie a tutti
+\end{flushright}
+\vspace*{\stretch{6}}
+\cleardoublepage
+\end{comment}
+% CITAZIONE - PERSONALIZZARE
+% VSPACE - PROPORZIONE USATA PER CENTRATURA VERTICALE DEL TESTO
+% FLUSHRIGHT - ALLINEAMENTO ORIZZONTALE A DESTRA
+\vspace*{\stretch{1}}
+\begin{flushright}
+\noindent
+
+
+\textit{In this laboratory, strange things happen.}
+
+All the guys of LAB 9
+\end{flushright}
+\vspace*{\stretch{6}}
+\cleardoublepage
+
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% added by Matteo, used to modify the depth of 
+% numbering the subsections
+\setcounter{secnumdepth}{4}
+% listing the subsections in the table of contents
+\setcounter{tocdepth}{3}
+\newcommand{\servecitazione}[1]{\textcolor{blue}{\textbf{citare qualcosa : #1}}}
+\newcommand{\needsrevision}[1] {\textcolor{green}{\textbf{needs revision: #1}}}
+\newcommand{\matteo}[1] {\textcolor{green}{\textbf{Matteo: #1}}}
+\newcommand{\matteodubbio}[1] {\textcolor{red}{\textbf{questa Matteo non l'ha capita "#1"}}}
+\newcommand{\fabiodubbio}[1] {\textcolor{red}{\textbf{Fabio non riesce a capire perche' ha scritto queste vaccate "#1"}}}
+\newcommand{\imageneeded}[1] {\textcolor{blue}{\textbf{Image is needed "#1"}}}
+\newcommand{\fabio}[1] {\textcolor{green}{\textbf{Fabio: #1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% RINGRAZIAMENTI - PERSONALIZZARE
+\ringraziamenti
+There are a lot of people who deserve to be named. First of all, all the guys in ``Lab 9'', especially Ivano Cerrato and Alex Palesandro, each of them has helped me in these eight months of thesis, and from whom I learned a lot. Thank you to Matteo Tiengo, for staying up late at night with me in the laboratory, and thank you to the annoying alarm of ``Politecnico di Torino'', for reminding us the ending of the canonical hours. Thank you to my university supervisor Fulvio Risso for all the precious advice and continuous support. 
+
+Thank you to Andrea and Corrado, without whom I would never have come to Torino.
+Thank you to my cousin Catia, that supported me in difficult moments in a city far from home. 
+Thank you to my parents, who gave me this fantastic opportunity.
+
+I would thank all my friends in my hometown Cupra Marittima, that every time I come home they make me feel as if I never left. 
+I would also thank all people I met during the years in Torino.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+% ABSTRACT - PERSONALIZZARE
+\sommario
+Abstract, pleased to meet you. Ah, it's not funny anymore.
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INDICI - ELIMINARE GLI INDICI NON NECESSARI
+
+% INDICE GENERALE
+\tableofcontents
+
+% INDICE DELLE FIGURE
+\listoffigures
+
+% INDICE DELLE TABELLE
+\listoftables
+
+% INDICE DEI CODICI
+\listofcodes
+
+%\paginavuota
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+% INCLUSIONE FILE CAPITOLI - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+\include{chapters/chapter_intro}
+\include{chapters/chapter_the_problem}
+\include{chapters/chapter_the_state_of_the_art}
+\include{chapters/chapter_tools}
+\include{chapters/chapter_exposition}
+\include{chapters/service_graph}
+\include{chapters/use_case}
+\include{chapters/prototype_implementation}
+\include{chapters/prototype_validation}
+
+\include{chapters/chapter_conclusions}
+
+%\appendix
+% INCLUSIONE APPENDICI - - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+%\include{appendixes/appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% BIBLIOGRAFIA
+\addcontentsline{toc}{chapter}{\refname}
+\nocite{*}
+\printbibliography
+
+\end{document}

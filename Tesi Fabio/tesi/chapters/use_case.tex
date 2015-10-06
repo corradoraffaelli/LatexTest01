@@ -1,0 +1,40 @@
+% !TEX root = ../thesis.tex
+\chapter{Use case: user defined network services}
+\label{sec:use_case}
+
+%\subsection{Scenario}
+Chapter~\ref{chap:gen_arch} and Chapter~\ref{chap:data_model} respectively provide a general overview of the architecture and a description of the associated data-models; those concepts could be used in a plenty of different use cases involving multiple actors in defining completely virtualized services. 
+In order to provide a concrete use case for these abstract models, in the following of the thesis we consider a particular scenario in which \textit{end users}, such as xDSL customers, can define their own service graphs to be deployed on the wide Internet Service Provider (ISP) infrastructure. 
+
+The ISP controls the entire infrastructure; particularly, it provides a service layer through which the end users can define the SG, the orchestration layer and infrastructure resources.
+In addition, the end users devices connect to the network through ISP-controlled equipments (i.e., integrated nodes or OpenStack-based nodes), which represent the entry point of user traffic within the operator network.
+%\fabio{sarebbe da spiegare che nel caso fosse un openstack-based node come componeti di openstack avrebbe solo il compute}
+
+Finally, an end user's SG can only operate on the traffic of that particular end user, i.e., on the packets he sends/receives through his terminal device.
+On the contrary, the ISP is enabled to define a SG that includes some VNFs that should operate on all the packets flowing through the network; hence, this SG must be shared among all the end users connected to the provider infrastructure.
+
+
+\section{Challenges}
+
+The use case just introduced presents some interesting challenges to be solved. 
+
+%Looking at the our use case scenario, we could enumerate the steps the systems has to encounter to deploy the requested service.
+
+
+
+First, the service layer must be able to recognize when a new end user attaches to the network in order to authenticate the user himself. 
+Note that, since the infrastructure layer does not implement any (processing and forwarding) logic by itself, this operation requires the deployment of a specific graph that only receives traffic belonging to unauthenticated users, and which includes some VNFs implementing the user authentication.
+Moreover, in order to enable the resource consolidation, this authentication graph should be shared among several end users.
+
+Second, after that the user is authenticated, the service layer must retrieve his SG and then connect it to the ISP graph; particularly, the two graphs must be connected in a way so that the user traffic, in addition of being processed by the service defined by the user himself, is also processed by the VNFs selected by the Internet provider.
+This interconnection of several graphs in cascade can be realized by exploiting the graph endpoints elements, which are provided by the SG formalism.
+
+Third, the user SG must be completed with some rules  to inject, in the graph itself, all the traffic coming from/going to the end user terminal, so that the service defined by an end user (only) operates on the packet belonging to the user himself.
+
+
+The data-model proposed in Chapter~\ref{sec:data_model} could flexibly model such work-flow. All SGs described above (e.g. end-user SG, authentication SG, ISP SG) could separately be defined in an independent way by the different actors involved. The architecture stack assures the deployment of the resulting SG, firstly obtaining the FG by the lowering process and then instruct the infrastructure component through the IG, leveraging the reconciliation process to optimize the whole process.
+In particular, a general problematic that looks particularly important in this use-case is represented by SG interconnection. In fact, all cited steps are concerned by a dynamical and sometimes timing-related SG interconnection. Moreover, such interconnection model has to be detached, as is done for VNF definition (Section~\ref{sec:gen_arch}), from infrastructure technology details.
+As mentioned before, user devices are connected thanks to rule to his graph, such method allows to attach and cleanly detach the user device dynamically from a certain SG. This may allow the user device to communicate on a certain SG and be unaware detached when a certain event happen (e.g. User device has been authenticated). This abstraction is massively leveraged by the service layer while composing services. 
+
+
+Finally, the service layer must require (to the lower layers) to deploy the user graph, and to create the proper tunnels on the network infrastructure so that the user traffic is bring, from the network entry point, to the graph entry point, which could have been deployed everywhere on the physical infrastructure.

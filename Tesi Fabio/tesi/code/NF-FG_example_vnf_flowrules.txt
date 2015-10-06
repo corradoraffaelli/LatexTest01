@@ -1,0 +1,22 @@
+"flowrules": [
+  {
+    "action": {
+      "VNF": {
+        "id": "Traffic monitor XY",
+        "port": "in/out:0"
+      },
+      "type": "output"
+    },
+    "flowspecs": [
+      {
+        "match": {
+          "etherType": "0x800",
+          "protocol": "tcp",
+          "destPort": "80"
+        },
+        "priority": "1000",
+        "id": "fa126"
+      }
+    ]
+  }
+]

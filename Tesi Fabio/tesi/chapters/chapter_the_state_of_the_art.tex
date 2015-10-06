@@ -1,0 +1,130 @@
+% !TEX root = ../thesis.tex
+\chapter{State of the art}
+%\chapter{Etsi nfv}
+\label{chap:the_state_of_the_art}
+In the following of this chapter a brief description of the ETSI NFV main concepts and architecture will be provided in order to better understand the problem and the implemented solutions proposed and discussed in Chapter~\ref{chap:gen_arch} and Chapter~\ref{chap:data_model} of this thesis.
+
+\section{The ETSI proposal}
+The European Telecommunications Standard Institute (ETSI) is an institution that produces globally-applicable standards for Information and Communications Technologies (ICTs). It ranges from fixed to mobile, radio, aeronautical, broadcast and Internet technologies and is officially recognized by the European Union as an European Standards Organization. In November 2012 seven of the world's leading telecoms network operators selected the ETSI to be the home of the Industry Specification Group (ISG) for Network Function Virtualization (NFV). Now, two years later, a large community of experts are working intensely to develop the required standards for Network Functions Virtualization as well as sharing their experiences of NFV development and earlier implementations.
+
+\subsection{Objectives}
+From a high level view, the objectives that the ETSI NFV group~\cite{nfv} are:
+\begin{itemize}
+	\item Improve capital efficiencies, if comparing NFV's to the one obtained through dedicated hardware implementations. This is achieved by using commercial-off-the-shelf (COTS) hardware - general purpose servers and storage devices - to provide Network Functions (NFs) through software virtualization techniques. Because of their nature, these functions are commonly referred as Virtualized Network Functions (VNFs). Also the sharing of hardware and reducing the number of different physical server architectures in a network will contribute to this objective in the sense of allowing larger stock orders and hardware re-usage.
+	\item Improve flexibility in assigning VNFs to hardware. This aids both scalability and largely separates functionality from location, which allows software to be located in the most appropriate places - referred to from now on as NFV Infrastructure Points of Presence (NFVI-PoPs)- . In the following example VNFs may be deployed at customers' premises, at network exchange points, in central offices, datacenters, etc. These features enable time of day re-usage, support for test of alpha/beta and production versions, enhance resilience through virtualization and facilitate resource sharing.
+	\item Rapid service innovation throughout automated software-based deployment.
+	\item Improve operational efficiency resulting from common automation and operating procedures.
+	\item Reduce power usage; this will be achieved by migrating workloads and powering down unused hardware (i.e., an idling server can be shout down).
+	\item Provide Standardized and open interfaces between virtualized network functions, the infrastructure and associated management entities so that such decoupled elements can be provided by different vendors.
+\end{itemize}
+
+\subsection{High-level NFV framework}
+Network Functions Virtualization envisages the implementation of NFs as software-only entities that run over the NFV Infrastructure (NFVI). Figure \ref{fig:etsi_hl_nfv_framework} provides an high-level view of the NFV framework. As evident, three main working domains are identified in network function virtualization:
+\begin{itemize}
+	\item \textbf{NFV Infrastructure (NFVI)}, including the diversity of physical resources and the way in which they can be virtualized. NFVI supports the execution of the VNFs.
+	\item \textbf{Virtualized Network Function} in the sense of the software implementation of a NF which is capable of running over the NFVI.
+	\item \textbf{NFV Management and Orchestration}, which covers the arrangement and life-cycle governance of physical and/or software resources that support the infrastructure virtualization other than the life-cycle management of VNFs. This point focuses on all virtualization-specific management tasks necessary in the NFV framework.
+\end{itemize}
+\begin{figure}[h]
+	\centering
+	% left bottom right top
+	\includegraphics[clip= true, width= \columnwidth]{images/ETSI_Architectural_framework.pdf}
+	\caption{High-level NFV framework architecture.}
+	\label{fig:etsi_hl_nfv_framework}
+\end{figure}
+
+The NFV framework enables dynamic construction and management of VNF instances and the relationships between them in terms of data, control, management, dependencies and other attributes. To this end there are at least three architectural views of VNFs that are centered around different points of view and contexts of a VNF. These perspectives include:
+\begin{itemize}
+	\item A virtualization deployment/on-boarding angle where the context can be a VM.
+	\item A vendor-developed software package perspective where the context can be several inter-connected VMs and a deployment template that describes their attributes.
+	\item An operator point of view where the context can be the operation and management of a VNF received in the form of a vendor software package.
+\end{itemize}
+Within each of the just mentioned contexts, at least the following relations exist between VNFs:
+\begin{itemize}
+	\item A VNF Set covers the case where the connectivity between VNFs is not specified.
+	\item A VNF Forwarding Graph (VNF-FG) covers the case where network connectivity does matter, for instance a chain of VNFs in a web server tier (e.g., firewall, NAT, load balancer)
+\end{itemize}
+
+\subsection{Network services in NFV}
+An end-to-end network service (e.g., mobile voice/data, Internet access, a virtual private network) can be described by a Network Function Forwarding Graph (NF-FG) of interconnected Network Functions (NFs) and end-points. The termination points and the NFs of the network service are represented as nodes and correspond to devices, applications, and/or physical server applications. A NF-FG can have network function nodes connected by logical links that can be unidirectional, bidirectional, multicast and/or broadcast.
+In Figure~\ref{fig:end2end_network_service} is shown an example of an end-to-end network service and the different layers that are involved in its virtualization process. The depicted example offers a clear view of the abstraction (upper part) and how it is remapped on the underlaying physical infrastructure (NFVI). It consists in an end-to-end network service composed of five general purpose VNFs and two termination (end) points. The decoupling of hardware and software in NFV is realized by a virtualization layer. This layer abstracts hardware resources of the NFV Infrastructure.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[clip= true, width= \columnwidth, trim=0cm 1cm 1cm 1cm]{images/network_service.png}
+	\caption{End-to-end network service with VNFs and nested forwarding graphs example.}
+	\label{fig:end2end_network_service}
+\end{figure}
+
+\subsection{Architecture of NFV}
+The NFV architectural framework identifies functional blocks and the main reference points between such blocks. The functional blocks are:
+\begin{itemize}
+	\item Virtualized Network Function (VNF).
+	\item Element Management System (EMS).
+	\item NFV Infrastructure, including:
+	\begin{itemize}
+		\item Hardware and virtualized resources.
+		\item Virtualization Layer.
+	\end{itemize}
+	\item Virtualized Infrastructure Manager(s).
+	\item Orchestrator.
+	\item VNF Manager(s).
+	\item Service, VNF and Infrastructure Description.
+	\item Operations and Business Support Systems (OSS/BSS).
+\end{itemize}
+Figure \ref{fig:etsi_detailed_nfv_framework} shows the NFV architectural framework depicting the functional blocks and reference points in the NFV framework. The illustrated architectural framework focuses on the functionalities necessary for the virtualization and the consequent operation of operators' networks. It does not specify which network functions should be virtualized, as that is solely a decision of the owner of the network.
+\begin{figure}[h]
+	\centering
+	\includegraphics[clip= true, width= \columnwidth]{images/architettura_etsi.png}
+	\caption{Detailed NFV framework architecture.}
+	\label{fig:etsi_detailed_nfv_framework}
+\end{figure}
+
+\subsubsection{Functional blocks}
+A functional block defined by the ETSI is the basic unit of a system and consists of:
+\begin{itemize}
+	\item A set of input interfaces.
+	\item A state.
+	\item A transfer function.
+	\item A set of output interfaces.
+\end{itemize}
+For the sake of clarity, a view of a functional block is given in Figure~\ref{fig:functional_block}.
+\begin{figure}[h]
+	\centering
+	%left bottom right top
+	\includegraphics[clip= true, width= \columnwidth, trim=0cm  10cm 0cm 4cm]{images/functional_block.pdf}
+	\caption{The fundamentals of a functional block.}
+	\label{fig:functional_block}
+\end{figure}
+A fundamental property of functional blocks is the complete and formal separation of the static from the dynamic. Using a more IT oriented terminology, the input, output, and internal (i.e., state) data structures and all the methods (i.e., the transfer function) are static. They shall not change. Only the values given as input parameters - and therefore the outputs - can change; these values are the only things labeled as dynamic.
+Functional blocks are linked together following two fundamental rules:
+\begin{itemize}
+	\item They can be interconnected, by connecting an output interface of one functional block with the input interface of another functional block.
+	\item When a number of functional blocks are interconnected together forming a topology, some input and some output interfaces may remain disconnected. In this case the resulting topology is, in turn, considered as a functional block itself in which the inputs and outputs are the endpoints that remained unlinked in the previous passage. The new obtained functional block follows the very same rules as a standard one.
+\end{itemize}
+
+\subsection{Templates}
+\label{sec:NFFG}
+ETSI introduces five descriptor for deployment and life-cycle management of virtual network functions (VNF) and network services (NS):
+\begin{itemize}
+	\item Network Service Descriptor (NSD)
+	\item VNF Descriptor (VNFD)
+	\item VNF Forwarding Graph Descriptor (VNFFGD)
+	\item Virtual Link Descriptor (VLD) 
+	\item Physical Network Function Descriptor (PNFD) 
+\end{itemize}
+
+A \textbf{Network Service Descriptor} is a deployment template for a Network Service referencing all other descriptors which, in turn, describe components that are part of that Network Service.
+
+In addition of containing descriptors, NSD also contains connection points and, optionally, dependencies between VNFs. The connection point is an information element representing the virtual and/or physical interface that offers connectivity between instances of NS, VNF, VNF Componet (VNFC), Physical NF Descriptor (PNF) and a Virtual Link (VL). Examples of virtual and physical interfaces are virtual ports, virtual NIC addresses, physical ports, physical NIC addresses or endpoints of an IP VPN.
+The meaning of dependencies between VNFs is quickly explained throughout an example; a function must exist and be connected to the service before another can be initiated/deployed and connected.
+
+A \textbf{VNF Descriptor (VNFD)} is a deployment template which describes the way a VNF has to be deployed and its operational behavior requirements. It is primarily used by the VNF Manager during the process of instantiation and life-cycle management of a VNF instance.
+
+The information provided in the VNFD is also used by the NFV Orchestrator to manage and orchestrate Network Services and virtualized resources all over the NFV Infrastructure. The VNFD also contains information for management and orchestration layer (MANO) functional blocks that allow to establish appropriate virtual links with NFVI between its VNF Component (VNFC) instances or between a VNF instance and the endpoint interface that has to be linked to the other network functions.
+
+A \textbf{VNF Forwarding Graph Descriptor (VNFFGD)} is a deployment template that differs from the others because it takes care of describing the topology of a Network Service (or a portion of it) by referencing  VNFs, Physical NFs (PNF) and Virtual Links that interconnect them. Essentially, it defines the paths that different kind of traffic have to follow and the ordered list of VNFs that they must go through.
+
+A \textbf{Virtual Link Descriptor (VLD)} is a deployment template which describes the resource requirements that are needed for a link that will be used to connect VNFs, PNFs and endpoints of the network service; requirements could be expressed by various link options that are available in the NFVI. The NFV Orchestrator can select an option after consulting the VNFFG to determine the appropriate NFVI to be used. The choice can be based on functionality (e.g., two separated and distinct paths to provide resiliency) and/or other needs (e.g., network physical topology, regulatory requirements, etc.).
+
+Finally, the Physical Network Function Descriptor delineates the connectivity, the interface and key performance indicator\cite{KPI} requirements of virtual links that are terminated on one side by a Physical Network Function(PNF); this flexibility is needed if hardware devices are incorporated in a Network Service, for example to facilitate the transition torward a fully virtualized environment.

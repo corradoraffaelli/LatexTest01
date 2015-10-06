@@ -1,0 +1,21 @@
+% !TEX root = ../thesis.tex
+\chapter{Service graph}
+%\chapter{Service graph}
+
+In our topology of service we defined a model used to represent an high level of service that the user asks to the network, this is called Service graph. It consists of the set of basic elements shown in Figure 2. These primitives have been selected among the most common elements that we expect are needed by the users to create their own network service.
+In particular, a SG may include the following seven basic primitives:
+\begin{itemize}
+
+	\item Network functions: it represents a functional block that may be lately translated into one (or more) VNF images. • Active port: it defines the attaching point of a network function that needs to be configured with a network- level address (e.g., IP), either dynamic or static. Packets
+	directed to that port are forwarded by the infrastructure based on the link-layer address of the port itself (e.g., MAC address).
+
+	\item Transparent port: it defines the attaching point of a net- work function whose associated virtual network interface card (vNIC) does not require any network-level address. If traffic has to be delivered to that port, the network infrastructure has to “guide” packets to it, e.g., through traffic steering elements, as the natural flow of data, which is based on link-layer addresses, does not cross those ports.
+	
+	\item Local area network (LAN): it represents the (logical) broadcast communication medium, i.e., the well-known primitive that allows data-link frames to be delivered to the correct recipient. The availability of this primitive facilitates the creation of complex services, as network- savvy people still tend to think about networks and hosts1.
+	
+	\item Point-to-point link: it defines the logical wiring among the different components. It can be used to implement the traffic steering between different network functions (e.g., when the output of VNF1 represents the input of VNF2), to connect an active port to a LAN, and more. Links are accompanied by the proper attaching rules that define how they can be connected to the different components.
+	
+	\item Traffic splitter/merger: it represents a functional block that allows to split the traffic based on a given set of rules, or to merge the traffic coming from different links. For instance, it can be used to redirect only the outgoing web traffic toward an URL filter (Figure 2), while the rest does not crosses that network function.
+	
+	\item Endpoint: it represents the external attaching point of the SG. It can be used to attach the SG to the Internet, to the user device, but also to the endpoint of another service graph, if several of them have to be cascaded.
+

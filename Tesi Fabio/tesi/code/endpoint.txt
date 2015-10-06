@@ -1,0 +1,9 @@
+"endpoints": [
+  {
+    "id": "Egress_endpoint",
+    "name": "ISP_INGRESS",
+    "connection_cardinality": "1_to_n",
+    "type": "physical",
+    "port": "ge0"
+  }
+]

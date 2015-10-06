@@ -1,0 +1,8 @@
+0.326	0.326 0.326 	"Direct connection"
+0.410	0.499 0.499 	"No VNF"
+7.161	0.892 0.539	"1 Linux bridge"
+13.974	0.928 0.572	"2 Linux bridges"
+30.504	1.549 0.613	"4 Linux bridges"
+46.272	2.033 0.621	"6 Linux bridges"
+62.037	2.331 0.662	"8 Linux bridges"
+86.544	3.334 0.706	"10 Linux bridges"

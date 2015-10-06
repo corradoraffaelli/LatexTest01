@@ -1,0 +1,35 @@
+% !TEX root = ../thesis.tex
+\chapter{Problem}
+\label{chap:State of the Art}
+\label{chap:Problem}
+
+The past 30 years have been marked by the networking principle of ``distributed intelligence''. Switches and routers basically decide independently where they forward packets and what information they exchange with neighboring devices. This approach has proven to be very stable, but also increasingly sluggish. For instance, the need of change in network configuration requires the reconfiguration of all devices, which is very time consuming.
+New services such as cloud computing and the increasing mobility provide much more dynamic demands on the communication infrastructure. Customer networks need within seconds to be equipped with the associated network functions such as switching, routing, firewalling or load balancing. This network functions should be able to be automatically moved from one data center to another. The necessary configuration changes must be made automatically. Therefore the large cloud providers like Google and Amazon decided to push towards a Software-Defined Networking approach. This choice makes network definitely more agile than in the past.
+
+%The concept of software-defined networking is becoming an alternative to stiff hardware-centric networking thanks to new speed and performance of new multicore processing. Once software-defined networking emerges, network devices will come with software development kits and open APIs, enabling a new world of networking applications to evolve.
+
+\section{Current networks conception problems}
+
+Current networks are implemented with hard, inflexible and super-fast hardware, and then it is very difficult for a service provider to offer to final users and companies a flexible  
+and innovative service with extreme simplicity. Therefore, an hardware-centric networking approach leads to slower innovation. Baking the software into silicon lengthens production cycles and reduces the number of features you can incorporate into the system. Worse, once baked in, the hardware cannot be easily modified. Firmware only softens this compromise, not really changing the underlying choice.
+
+\section{SDN and NFV approach}
+
+Although software is infinitely flexible, but slower than hardware. Multicore processing is gradually narrowing the gap in performance. Moreover, new software development practices, virtualization and open standards have made software much more modular, flexible and easy to develop. 
+
+%A hardware fabrication factory is several thousand square feet and costs millions of dollars, whereas some of the best software development environments can run in a window on any laptop and can be acquired for free (e.g., Eclipse).
+
+Today, computer networks are experiencing the biggest upheaval since the 70' when they was born. Networks should not be configured at the device level, but as a whole. This makes it possible to build networks that are more agile, flexible, robust and secure than today's networks.
+To achieve this, a nontrivial architecture that exploit the SDN and NFV paradigm come into play, in this thesis we are going to analyze both ETSI and our architecture proposal.
+Either of them introduce fundamental components in network architectures that go beyond the traditional conception of network world. These fundamental components are cloud-computing and orchestrator.
+The first one is needed because virtual network functions (VNFs) are taking place of network functions coded in hardware, so the compute is in charge to manage them. VNF means a software version of a network function (e.g. dhcp, firewall, nat) so we can find VNF in the form processes running in a virtual machine, a linux container or in the form of simple process. The orchestrator component instead allows a network administrator to provide a service on the network, without having to deal with each individual architectural device, taking care about steer the right input the right module of the architecture.
+ 
+Potentially this new approach opens up new opportunities and above all, as mentioned before, gives an agility to the network unthinkable heretofore. For example, the network can dynamically react to an attack or can dynamically respond to a congested link, duplicating network function and inserting a load balancer.
+
+\section{Technological transition}
+
+On the path leading effective implementation of these services there are a lot of challenges to be faced; for instance, where to place the computing resources and on the basis of which criterion decide where to instantiate the virtual network functions. There is not a simple and unique solution to these problems, for the first problem for example, google are bringing on users' home a gigabit fiber-based connection, thus reducing the latency and bandwidth problems, adopting as a solution to keep the computing resources in the network core, taking so geographically distant users and services. This solution is not thinkable for a country like Italy with a population highly distributed in a highly irregular area. Hence, another type of approach is to bring some computing resources till user's home and trying to bring the network functions required by users as close as possible to them. 
+
+Another significant problem is to be able to make as easy and inexpensive as possible for service providers the transition between the old and the new concept of networks. This can be done only trying to take advantage of the general purpuse software tools, which companies already use on general purpose hadware, to provide this new level of service. It is in this context that OpenStack comes.
+
+

@@ -1,0 +1,9 @@
+# UDP TCP WGET
+810 			810 	810		"Direct connection"
+812 			811 	811		"No VNF"
+809				810 	812		"1 Linux bridge"
+807				620 	812		"2 Linux bridges"
+771 			194		805		"4 Linux bridges"
+538				131 	797		"6 Linux bridges"
+410 			0		761		"8 Linux bridges"
+328				0		631		"10 Linux bridges"	

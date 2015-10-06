@@ -1,0 +1,9 @@
+# UDP TCP WGET
+810 934 864			810 934 864			"Direct connection"
+812 934 864			811 934 848			"No VNF"
+809 932 864			810 934 840			"1 Linux bridge"
+807 932 864			620 911 832			"2 Linux bridges"
+771 487 404.8			194 899 816		"4 Linux bridges"
+538 323 276.8			131 847 784		"6 Linux bridges"
+410 247 210.4			0	0	0		"8 Linux bridges"
+328 193 197.2			0	0	0		"10 Linux bridges"	

@@ -1,0 +1,23 @@
+"ports": [
+  {
+    "id": "L2Port:0",
+    "ingoing_label": {
+      "flowrules": []
+    },
+    "outgoing_label": {
+      "flowrules": []
+    }
+  },
+  {
+    "id": "L2Port:1",
+    "outgoing_label": {
+      "flowrules": []
+    }
+  },
+  {
+    "id": "L2Port:2",
+    "outgoing_label": {
+      "flowrules": []
+    }
+  }
+]

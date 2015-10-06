@@ -1,0 +1,118 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+Each single one of the keystone services listed above can potentially be connected to a different backend, this is done to allow Keystone to fit a variety of environments and needs. The most popular choice is a SQL based one that leverages SQLAlchemy to store data persistently. If this solution is adopted, the keystone-manage command can be used to introspect the backend and, by running the \\texttt\{"db\\_sync()"\} subcommand, to upgrade the database schema. In substitution to this first classical solution, a Lightweight Directory Access Protocol (LDAP) backend can be used to store users and projects in separate subtrees, roles then are recorded as entries under the projects they belong to. The possibility to choose between different kinds of backend is mainly available thanks to the structure that the majority of OpenStack projects have, that is an abstract class defines basic interactions and primitives callable by frontend services, these functions are then implemented inside a set of special purpose classes, each one dedicated to manage a specific storage system. Administrators can then specify which backend they want and are going to use inserting a proper entry into the dedicated configuration file section.\
+\
+As well as the backends, OpenStack has a common way to manage the API call and keystone makes no exception. As in other services, an HTTP front-end is exported by using the python WSGI interface. HTTP endpoints are made up of pipelines of WSGI middleware that, in turn, use a subclass called \\texttt\{"ComposingRouter"\} that takes care of linking URLs to one of the defined controllers; within each controller, one or more managers are loaded. Managers are thin wrapper classes in charge of loading the appropriate service driver based on the keystone configuration.\
+\
+\
+\
+As a distributed environment, the system has to provide secure access and in order to achieve that both users and services must authenticate themselves before performing any operation.\
+OpenStack developers wrote a specific service called keystone for this vary purpose, in it are stored username and password for each authorized user/service, the authorization process involves obtaining a token to be used later to perform requests to other services.\
+The general concept behind a token-based authentication system is simple. Allow users to enter their username and password in order to obtain a token which allows them to fetch a specific resource - without using their username and password. Once their token has been obtained, the user can offer the token - which offers access to a specific resource for a time period.\
+Identity also correlate to a user its role in the system and the visibility of resources he or she can get.\
+Generally Administrators are able to see everything that is going on in the system while a common user can only see the virtual resources he or she created. This separation of group belonging or better say membership in keystone is called role and is used by other services to check whether the user is authorized or not to perform such operation, basically defining a sandbox for each user so that anyone can only see what he/she is authorized to. Beside the user concept keystone define three fundamental terms: group, tenant (or project), and domain so that rules can be associated to them instead of directly to users.\
+\
+\
+\\fabio\{chiarire cos'e un endpoint in keystone\}\
+Keystone is organized as a group of internal services exposed on one or many endpoints. Services provided are the following:\
+\\begin\{itemize\}\
+	\\label\{keystoneservicelist\}\
+	\\item Identity - The Identity service provides authentication credential validation and data about Users, Groups, Projects, Domains and Roles, as well as any associated metadata.\
+	In the basic case all this data is managed by the service, allowing the service to manage all the CRUD associated with the data.\
+	In other cases, this data is pulled, by varying degrees, from an authoritative backend service. An example of this would be when backending on LDAP. \
+	\\item Token - The Token service validates and manages Tokens used for authenticating requests once a user\'92s credentials have already been verified.\
+	\\item Catalog - The Catalog service provides an endpoint registry used for endpoint discovery.\
+	\\item Policy - The Policy service provides a rule-based authorization engine and the associated rule management interface.\
+\\end\{itemize\}\
+\
+\
+As previously mentioned keystone is an HTTP front-end to several services and like other OpenStack applications, this is done using python WSGI interfaces and applications are configured together using Paste. The application\'92s HTTP endpoints are made up of pipelines of WSGI middleware, such as:\
+\
+\\begin\{lstlisting\}\
+[pipeline:api_v3]\
+pipeline = sizelimit url_normalize build_auth_context token_auth admin_token_auth\
+xml_body_v3 json_body ec2_extension_v3 s3_extension service_v3\
+\\end\{lstlisting\}\
+\
+These in turn use a subclass of keystone.common.wsgi.ComposingRouter to link URLs to Controllers (a subclass of keystone.common.wsgi.Application). Within each Controller, one or more Managers are loaded (for example, see keystone.catalog.core.Manager), which are thin wrapper classes which load the appropriate service driver based on the Keystone configuration.\
+Each of the services can configured to use a backend to allow Keystone to fit a variety of environments and needs. The backend for each service is defined in the keystone.conf file with the key driver under a group associated with each service.\
+A general class under each backend named Driver exists to provide an abstract base class for any implementations, identifying the expected service implementations.\
+Each keystone services are potentially connected to different backends like:\
+\
+\\begin\{itemize\}\
+	\\item SQL - A SQL based backend using SQLAlchemy to store data persistently. The keystone-manage command introspects the backends to identify SQL based backends when running \\texttt\{"db\\_sync()"\} to establish or upgrade schema. If the backend driver has a method \\texttt\{db\\_sync()\}, it will be invoked to sync and/or migrate schema.\
+	\\item Template - Largely designed for a common use case around service catalogs in the Keystone project, a Catalog backend that simply expands pre-configured templates to provide catalog data.\
+	\\item LDAP - The LDAP backend stores Users and Projects in separate Subtrees. Roles are recorded as entries under the Projects.\
+\
+\\end\{itemize\}\
+\
+\
+Keystone was designed from the ground up to be amenable to multiple styles of backends and as such many of the methods and data types will happily accept more data than they know what to do with and pass them on to a backend.\
+There are a few main data types:\
+\
+\\begin\{itemize\}\
+	\\item User: has account credentials, is associated with one or more projects or domains\
+	\\item Group: a collection of users, is associated with one or more projects or domains\
+	\\item Project: unit of ownership in OpenStack, contains one or more users. In Openstack project and tenant concepts are used indistinguishably because of historical reason.\
+	\\item Domain: unit of ownership in OpenStack, contains users, groups and projects\
+	\\item Role: a first-class piece of metadata associated with many user-project pairs.\
+	\\item Token: identifying credential associated with a user or user and project\
+	\\item Extras: bucket of key-value metadata associated with a user-project pair, it provide a method to send more fields in a REST call without changing its interface.\
+	\\item Rule: describes a set of requirements for performing an action.\
+	\
+\\end\{itemize\}\
+While the general data model allows a many-to-many relationship between Users and Groups to Projects and Domains; the actual backend implementations take varying levels of advantage of that functionality.\
+\
+\
+Various components in the system (not only keystone but the whole Openstack) require that different actions are allowed based on whether the user is authorized to perform that action.\
+For the purposes of Keystone there are only a couple levels of authorization being checked for:\
+\\begin\{itemize\}\
+	\\item Require that the performing user is considered an admin.\
+	\\item Require that the performing user matches the user being referenced.\
+\\end\{itemize\}\
+Other systems wishing to use the policy engine will require additional styles of checks and will possibly write completely custom backends. \
+Given a list of matches to check for, simply verify that the credentials contain the matches. For example:\
+\
+\\begin\{lstlisting\}\
+credentials = \{'user_id': 'foo', 'is_admin': 1, 'roles': ['nova:netadmin']\}\
+\
+# An admin only call:\
+policy_api.enforce(('is_admin:1',), credentials)\
+\
+# An admin or owner call:\
+policy_api.enforce(('is_admin:1', 'user_id:foo'), credentials)\
+\
+# A netadmin call:\
+policy_api.enforce(('roles:nova:netadmin',), credentials)\
+\\end\{lstlisting\}\
+Credentials are generally built from the user metadata in the \'91extras\'92 part of the Identity API. So, adding a \'91role\'92 to the user just means adding the role to the user metadata.\
+\
+Is also possible to specify policy always based on rules for each Openstack components. All components have their own "policy.json" file that permits to associate rules to all Openstack service actions. The following is an example of policy.json file of Compute service (Nova).\
+\
+\\begin\{lstlisting\}\
+\{\
+	"context_is_admin":  "role:admin",\
+	"admin_or_owner":  "is_admin:True or user_id:%(user_id)s",\
+	"default": "rule:admin_or_owner",\
+	\
+	"cells_scheduler_filter:TargetCellFilter": "is_admin:True",\
+	\
+	"compute:create": "",\
+	"compute:create:attach_network": "",\
+	"compute:create:attach_volume": "",\
+	"compute:create:forced_host": "is_admin:True",\
+	"compute:get_all": "",\
+	"compute:get_all_tenants": "",\
+	"compute:start": "rule:admin_or_owner",\
+	"compute:stop": "rule:admin_or_owner",\
+	"compute:unlock_override": "rule:admin_api"\
+\}\
+\\end\{lstlisting\}\
+\
+This example shown a context in witch only the owner user or the admin can start or stop a VM, in this case indeed a different user of the same project can't manage VM of other user (Note that this configuration is only an illustrative example).\
+}

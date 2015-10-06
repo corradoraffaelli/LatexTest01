@@ -1,0 +1,10 @@
+"VNFs": [
+  {
+    "vnf_descriptor": VNF_URL,
+    "ports": [],
+    "id": "Client_Switch",
+    "name": "Switch"
+  },
+  ...
+]
+

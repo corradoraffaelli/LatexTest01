@@ -1,0 +1,27 @@
+% !TEX root = ../thesis.tex
+\chapter{Conclusion and future works}
+\label{chap:Conclusions}
+\label{sec:conclusion}
+
+This thesis presents a network orchestration architecture that, starting from the service required by external actors (e.g., end users, Internet providers), takes care of instantiating it on the physical infrastructure of the network, by exploiting the opportunities offered by the Network Functions Virtualization (NFV) and Software Defined Networking (SDN) paradigm.
+
+
+The contribution of this thesis is twofold. First, we proposed a new formalism, called \textit{service graph (SG)}, to flexibly model end-to-end network services. 
+The SG data-model describes how to deliver flexible network services, leveraging existing elements and the traffic steering primitives introduced by NFV/SFC. 
+It is worth noting that this SG definition is completely compliant with NFV principles of abstract description of a Service, but enriches its traditional expressiveness to model legacy networks and services. 
+
+The second contribution is made by the introduction of the \textit{forwarding graph (FG)} and all the ``lowering process'' that leads to the deployment of an optimized service. This process of translation is capable to adapt the service delivering to available resources of the underlying infrastructure; moreover, it is also able to detect specific capabilities of selected nodes adapting the infrastructure graph obtained as output. 
+
+In order to validate our model, we implement the \textit{OpenStack-based node} prototype and we also tested the \textit{integrated node} for physical infrastructure.
+
+%In order to validate our model, we implemented two prototypes for the physical infrastructure: the \textit{integrated node} and the \textit{OpenStack-based node}. 
+While the latter consists of a single server mainly based on ad hoc components, the former is implemented as a cluster of server orchestrated by the an extended version of the OpenStack framework.
+Experimental results showed that, while the integrated node has low requirements in terms of memory, its performance are overcome by the OpenStack-based node in almost all the tests carried out except for tests about the deployment time, despite they are not so good are even better that the OpenStack-based results. The time of startup of the service is definitely the largest showed by the experimental results, because an user cannot wait that times for access their services.
+
+As a plan for the future, we foresee two different challenges to be pursued in order to let this architecture to properly scale to the ISP network size. 
+First, the proposal of an algorithm to implement a network-aware and resources-aware scheduling, capable of deploying VNFs on the nodes of the physical infrastructure by considering the paths expressed into the graph and also the features and the current usage of resources in single node (or domain). This require in the orchestrator the ability of splitting a single graph in multiple subgraphs and the instantiation of these in different nodes.
+Second, the definition of a hierarchical orchestration layer would be expedient in order to be able to scale out to potentially the whole ISP network. 
+This would allow the deployment of a FG across multiple administrative domains, in which the lower level orchestrators expose only some information to the upper level counterparts. 
+This scenario is perfectly compatible with our architecture and will be object of further analysis; in fact, the global orchestrator presented in the thesis has syntactically identical northbound and southbound interfaces (in fact, it receives a FG from the service layer, and it is able to provide a FG to the next component), and hence a hierarchy of orchestrators is possible. 
+
+To conclude, in the \textit{OpenStack-based node} we would have to get rid of \textit{network node} that force all outbound traffic from OpenStack to go from a router/nat positioned on node where \textit{network node} is installed,  which potentially affect the performance of our prototype.
