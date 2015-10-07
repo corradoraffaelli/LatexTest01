@@ -4,13 +4,13 @@
 %%%%%%% e TeXstudio per gestire questo file con la codifica IsoLatin o Latin 1
 %%%%%%% o ISO 8859-1. Se si vuole usare un'altra codifica si veda sotto.
 %%%%%%%
-\documentclass[12pt,classica, english]{toptesi}
+\documentclass[12pt,classica, italian]{toptesi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % INCLUSIONE PACCHETTI
 \usepackage[utf8]{inputenc} %utf8
-\usepackage[english]{babel}
+\usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{blindtext}
 \usepackage{graphicx,wrapfig}
@@ -103,7 +103,12 @@
 
 % LISTA DEI CAPITOLI DA INCLUDERE - PERSONALIZZARE
 \includeonly{%
-	chapters/GameDesign
+	chapters/Introduzione,
+	chapters/ContestoDiRiferimento,
+	chapters/StatoDellArte,
+	chapters/GameDesign,
+	chapters/GameDevelopment,
+	chapters/Risultati
 	%	appendixes/appendix,
 }
 
@@ -174,7 +179,7 @@
 
 % INIZIO DOCUMENTO
 %\begin{document}
-\english
+%\english
 
 \frontespizio
 
@@ -277,7 +282,12 @@ Abstract, pleased to meet you. Ah, it's not funny anymore.
 \mainmatter
 
 % INCLUSIONE FILE CAPITOLI - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+\include{chapters/Introduzione}
+\include{chapters/ContestoDiRiferimento}
+\include{chapters/StatoDellArte}
 \include{chapters/GameDesign}
+\include{chapters/GameDevelopment}
+\include{chapters/Risultati}
 
 %\appendix
 % INCLUSIONE APPENDICI - - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
