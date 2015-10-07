@@ -231,3 +231,206 @@ La seconda immagine in Figura~\ref{fig:platform_enigma} mostra l’enigma comple
 \subsection{Camera e Puntatore}
 \label{sec:camera_e_puntatore}
 
+Per quando riguarda la camera, abbiamo fatto in modo che questa fosse sempre approssimativamente centrata sul personaggio principale. In realtà usa una funzione che ne ammorbidisce il movimento, non segue perciò perfettamente il personaggio, ma tende in breve tempo alla sua posizione. Questa scelta è stata presa per rendere l’effetto meno brusco e quindi più gradevole alla vista.
+Abbiamo anche ritenuto necessario includere la possibilità di evitare che la camera inquadri porzioni di scena non previste. È stata perciò valutata la capacità di gestire dei limiti della scena. Questa opzione è stata utilizzata solamente nel livello centrale, che funge da accesso agli altri livelli, ma sicuramente può fornire un mezzo ulteriore, in fase di design di altre meccaniche.
+
+In seguito al design della meccanica di gioco principale, quella della Lanterna Magica (Riferimento), si è valutata la possibilità di inserire, per non confondere eccessivamente il giocatore, la possibilità di utilizzare un puntatore anche nelle normali fasi di gioco.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.85\columnwidth]{images/gameDesign/15.jpg}
+	\caption{Spostamento della camera in relazione alla posizione del personaggio e del puntatore.}
+	\label{fig:camera_posizione_1_4}
+\end{figure}
+
+Il puntatore permette all’utente di spostare la camera dal personaggio principale ed osservare quindi porzioni di gioco che, normalmente, non sarebbero presenti nella visuale standard.
+Il design del puntatore è stato un passaggio particolarmente difficile, che abbiamo perfezionato col tempo, in seguito allo sviluppo e test di vari prototipi.
+Una delle prime versioni che abbiamo sviluppato, faceva tendere la posizione della camera al punto posto ad 1/4 del segmento che congiungeva il personaggio ed il puntatore, questo permetteva un allontanamento della camera dal personaggio, così da poter inquadrare una porzione di schermo maggiore (Figura~\ref{fig:camera_posizione_1_4}).
+
+Ci siamo però resi conto che, nonostante l’effetto risultante fosse gradevole, l’utilità era particolarmente ridotta, in quanto non era possibile inquadrare elementi particolarmente lontani.
+Si è perciò ipotizzato di allontanare la camera, lungo l’asse perpendicolare allo schermo, progressivamente con l’allontanarsi del puntatore dal personaggio.
+In questo modo si è riusciti, con un effetto visivo di ridimensionamento degli elementi a schermo, ad inquadrare una porzione più grande di scena. Il maggiore problema riscontrato era comunque quello di un effetto forse troppo “pesante” all’occhio umano, che avrebbe perciò potuto generare confusione o addirittura fastidio al giocatore (Figura~\ref{fig:camera_allontanamento}).
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.85\columnwidth]{images/gameDesign/16.jpg}
+	\caption{Allontanamento della camera in relazione alla posizione del personaggio e del puntatore.}
+	\label{fig:camera_allontanamento}
+\end{figure}
+
+Abbiamo ulteriormente accentuato l’effetto di disturbo provando ad applicare un approccio ibrido, limitando perciò l’allontanamento della camera, ma accompagnandolo da uno spostamento della camera lungo l’asse tra il personaggio ed il puntatore. È stata perciò scartato la possibilità di sfruttare entrambi gli approcci.
+
+Concludendo le nostre analisi, abbiamo scelto di applicare il primo approccio proposto, spostando perciò la posizione della camera in un punto compreso tra il personaggio ed il puntatore, aumentando però il rapporto tra le due porzioni di segmento (0.37 anziché 0.25), così da poter inquadrare anche elementi più lontani. La camera raggiunge però tale posizione in un tempo particolarmente lento, così da ottenere un effetto più gradevole e spingere il giocatore a muovere il puntatore verso l’esterno dello schermo.
+
+Il puntatore, graficamente, come è possibile vedere in Figura~\ref{fig:camera_posizione_1_4} e Figura~\ref{fig:camera_allontanamento}, è rappresentato come un semplice cerchio bianco, da cui parte un minimale effetto particellare, così da renderlo più visibile.
+Abbiamo inoltre ritenuta valida la scelta di far girare il personaggio nella direzione del puntatore così che enfatizzi la metafora dell’elemento come modo per osservare altre porzioni di scena.
+
+Mentre il personaggio è fermo, il puntatore rimane sempre visibile a schermo e la camera si adatta alla posizione di personaggio e puntatore, come analizzato nei precedenti paragrafi. In una prima versione sviluppata, il puntatore risultava essere sempre visibile, e con la camera che si muoveva di conseguenza. Successivamente abbiamo valutato la possibilità di far scomparire il puntatore in determinate situazioni, così da escluderlo dalla componente platform del gioco, che non richiede un'eccessiva osservazione di elementi non immediatamente visibili a schermo, ed associarlo invece maggiormente alla componente puzzle.
+Quindi nel momento in cui il personaggio effettua un qualsiasi movimento, il puntatore scompare e la camera torna ad adattarsi, con un movimento molto lento, alla posizione del personaggio.
+Il puntatore rimane visibile durante i movimenti del personaggio solamente se questo è mosso manualmente dall’utente, che vuole perciò continuare ad osservare la scena pur non rimanendo completamente fermo.
+Abbiamo ritenuto che tali scelte di design, per quanto riguarda il puntatore ed il relativo movimento di camera, abbiano portato ad un buon risultato, che è stato sempre apprezzato durante le fasi di testing del prodotto.
+
+\subsection{Meccaniche ispirate all'ambito del pre-Cinema}
+\label{sec:meccaniche_precinema}
+
+Ispirandoci all’ambito del pre-cinema e ad alcuni strumenti utilizzati nel contesto, abbiamo valutato la possibilità di includere elementi di gameplay atipici e che quindi avrebbero potuto colpire il giocatore per inventiva ed originalità.
+
+La Lanterna Magica (riferimento) è stata scelta per costituire la meccanica innovativa più rilevante del videogioco. Considerando la sua capacità di creare immagini che al pubblico sembravano reali, abbiamo valutato la possibilità di fare in modo che il personaggio potesse plasmare il mondo a suo piacimento proiettando immagini.
+La Lanterna Magica utilizza dei vetrini che vengono proiettati sulle superfici attraverso l’utilizzo di un raggio di luce. Tali vetrini spesso erano composti da più parti. Una delle prime meccaniche che abbiamo quindi valutato è stata quella di raccogliere, lungo un livello, dei frammenti di vetrino che avessero permesso, una volta ricomposti, di utilizzare la lanterna per uscire dal livello.
+Tale elemento di gameplay però, avrebbe limitato l’utilizzo della Lanterna Magica esclusivamente all’ultima parte del livello, mettendone in secondo piano le potenzialità. Abbiamo perciò scartato questa ipotesi di utilizzo, nonostante in parte sia alla base dello sviluppo dell’hub centrale (riferimento).
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.85\columnwidth]{images/gameDesign/17_giocoliere.jpg}
+	\caption{Proiezione di Lanterna Magica.}
+	\label{fig:meccaniche_precinema_lanterna01}
+\end{figure}
+
+Si è perciò valutata la possibilità di poter utilizzare in ogni momento la Lanterna Magica, magari dovendo raccogliere il vetrino da poter utilizzare lungo il livello. Si sono fatte alcune ipotesi per valutare le potenzialità di questo approccio, ed i risultati, ottenuti anche da alcuni test, sono subito sembrati molto promettenti.
+Una delle iniziali idee proposte, è stata quella di usare due particolari proiezioni in grado di poter attirare (Figura~\ref{fig:meccaniche_precinema_lanterna01}) o spaventare i nemici, così da spingerli a svolgere determinate azioni o magari distogliere il loro sguardo dal personaggio.
+
+
+
+È evidente come la lanterna magica sia uno strumento che, potendo proiettare nello scenario un qualsiasi tipo di elemento, apre le porte ad un amplissimo numero di possibilità di gioco.
+Il passaggio successivo è stato quindi quello di cercare delle proiezioni che avessero permesso di avere meccaniche semplici da utilizzare, ma con un buon potenziale per lo sviluppo di sezioni ed enigmi di gioco. Tra quelle che abbiamo valutato ci sono, a titolo di esempio:
+
+\begin{itemize}
+	\item \textbf{Piattaforma.} Permette al personaggio di saltarci sopra per raggiungere posti non raggiungibili. È la forma più basilare di modifica all’ambiente. Aggiunge un elemento già esistente nello scenario, non richiede quindi uno sforzo di comprensione eccessivo. Può essere utilizzata anche come passerelle per un nemico.
+	
+	\item \textbf{Molla.} Una sorta di piattaforma potenziata. Permette di ricevere una spinta verso l’alto proporzionale all’altezza di caduta e perciò di raggiungere posti ancora più elevati. Apre alcune possibilità di gameplay ulteriori rispetto alla piattaforma, in quanto esiste anche la possibilità di raggiungere posti differenti a seconda dell’altezza da cui inizia la caduta sulla molla.
+	
+	\item \textbf{Fantasma.} Spaventa i nemici. Permette di distrarre i nemici dal personaggio, oltre che spingerli verso un possibile obiettivo (bottone da premere). Si è inoltre, coerentemente con questa proiezione, valutata la possibilità di inserire tipologie di nemici che avessero reagito in maniera differente alla visione del fantasma, come nemici corazzati che per lo spavento avessero perso l’armatura e quindi diventati vulnerabili.
+	
+	\item \textbf{Esca (giocoliere).} Il giocoliere era una proiezione utilizzata anche nei tipici spettacoli di lanterna magica dell’epoca, quindi aggiunge anche un elemento di coerenza storica. Può essere utilizzato con le stesse modalità del fantasma, cioè per spingere il nemico verso un possibile obiettivo dello scenario.
+	
+	\item \textbf{Acquario.} Inizialmente è stato pensato come elemento che può essere utilizzato per rallentare tutto ciò che ne passa attraverso. Una cassa in caduta può quindi essere rallentata per permettere al personaggio di svolgere altre azioni. Successivamente si è valutata la possibilità di usarlo come elemento capace di generare confusione in un nemico, attraverso correnti imprevedibili al suo interno.
+	
+	\item \textbf{Vento.} Genera un potente flusso di vento che interagisce con l’ambiente di gioco. Può essere usato per spingere il personaggio, per rallentare i nemici, per spostare elementi dello scenario o per interagire con meccanismi sviluppati appositamente (girandole che aprono porte, mongolfiere).
+	
+	\item \textbf{Gabbia per nemici.} Capace di intrappolare un nemico per un breve periodo di tempo.
+	
+	\item \textbf{Guardaroba.} Traveste il nemico da personaggio principale e viceversa, così da confondere il comportamento degli altri nemici.
+	
+	\item \textbf{Burrone con spuntoni.} Permette di uccidere i nemici.
+	
+	\item \textbf{Fiamma.} Permette di uccidere i nemici e di interagire con elementi appositi (palloncini).
+	
+	\item \textbf{Picchio di legno.} Permette di interagire a distanza con leve ed altri meccanismi.
+\end{itemize}
+
+Le precedenti proiezioni sono state valutate attentamente, cercando di prendere in considerazione tutte le possibilità di gameplay che avrebbero potuto originare.
+Considerando anche la struttura generale di gioco ed il numero di livelli che abbiamo stimato fossero necessari per fornire un’esperienza sufficiente (riferimento), abbiamo deciso di utilizzare le proiezioni della piattaforma e del vento (Figura~\ref{fig:meccaniche_precinema_piattaforma_vento}), in quanto la prima risulta di facile comprensione ed utilizzo, mentre la seconda mostra le vere potenzialità della lanterna magica e gli effetti che questa può creare nello scenario di gioco.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.85\columnwidth]{images/gameDesign/18_piattaforma_vento.jpg}
+	\caption{Proiezioni di vento e piattaforma.}
+	\label{fig:meccaniche_precinema_piattaforma_vento}
+\end{figure}
+
+Per quanto riguarda la piattaforma, questa può essere attraversata dal basso verso l’alto, grazie ad un salto del personaggio, questo per evitare che il suo utilizzo non sia troppo complicato e l’operazione non risulti troppo frustrante. Come si può vedere in Figura~\ref{fig:meccaniche_precinema_piattaforma_vento}, abbiamo quindi deciso di renderla graficamente come una nuvola con, appoggiata su di essa, una porzione di terreno. Il giocatore ha quindi la sensazione di un terreno soffice, attraversabile, nella parte più bassa, mentre duro e concreto nella parte superiore.
+Come già specificato, abbiamo utilizzato la piattaforma in quanto si tratta di un elemento di facile utilizzo e comprensione. Le piattaforme sono già presenti nello scenario di gioco, l’utente non si trova quindi spiazzato dalla sua presenza. Si trova però a dover ragionare sulla giusta posizione in cui porre la proiezione per far sì che questa sia di una qualche utilità.
+Come verrà spiegato nell’analisi dei livelli (riferimento) si è preferito mostrare all’utente la lanterna e la relativa proiezione della piattaforma prima di dargli la possibilità di raccoglierla e quindi usarla. Questo per permettere un iniziale ambientamento del giocatore con la particolare meccanica di gioco e mostrare alcuni possibili utilizzi che potrebbero risultare poco intuitivi se richiesti direttamente all’utente.
+
+La piattaforma viene utilizzata sia dal personaggio giocabile per raggiungere posti troppo lontani o per spostare nemici da una parte all’altra della scena, così da poter premere bottoni o interagire con l’ambiente nel modo previsto, come mostrato in Figura~\ref{fig:meccaniche_precinema_piattaforma}.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/19_piatt.jpg}
+	\caption{Utilizzi della proiezione della piattaforma.}
+	\label{fig:meccaniche_precinema_piattaforma}
+\end{figure}
+
+La proiezione del vento è invece caratterizzata dal fatto di interagire anche con l’ambiente e quindi non esclusivamente col personaggio di gioco. Gli alberi reagiscono al suo utilizzo, così come le foglie, le bandiere e le girandole presenti nel livello.
+Come per la piattaforma, prima di permettere all’utente di usare la meccanica del vento, glie ne viene mostrato l’utilizzo in più forme.
+Il vento può dare una spinta ulteriore al personaggio, permettendogli quindi di spiccare salti che possono coprire grandi distanze. Può quindi raggiungere zone molto elevate o saltare grandi burroni.
+Tale proiezione può essere anche utilizzata per rallentare o velocizzare i nemici, a seconda del suo verso, per interagire con alcuni elementi dell’ambiente, sia in maniera puramente estetica, come i già citati alberi e bandiere, o per attivare meccanismi utili alla partita, come girandole che permettono l’apertura di speciali porte, mongolfiere con le quali è possibile raggiungere la cima di una montagna o barche a vela che permettono di superare distese d’acqua (Figura~\ref{fig:meccaniche_precinema_vento}).
+
+Il vento è sicuramente una meccanica molto interessante, che esprime massimamente l’idea di sorpresa generabile da una proiezione di lanterna magica.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/20_vento.jpg}
+	\caption{Utilizzi della proiezione del vento.}
+	\label{fig:meccaniche_precinema_vento}
+\end{figure}
+
+Esempi di utilizzo delle due meccaniche verranno mostrati nell’analisi dei livelli (riferimento).
+
+Inizialmente si ipotizzava di far utilizzare la lanterna assegnandole uno specifico tasto da tenere premuto. La lanterna sarebbe stata quindi sempre in mano al personaggio ed utilizzata in qualsiasi momento. Tale approccio si sposa perfettamente con alcune proiezioni, come quelle di fantasma ed esca, in quanto l’utente può muovere dinamicamente l’elemento proiettato e direzionarlo in relazione ai movimenti dei nemici, ma impedisce di utilizzare molte delle altre proiezioni teorizzate, in quanto non permette una diretta interazione di queste con il personaggio giocabile.
+
+La soluzione che abbiamo ritenuto più valida è stata quindi quella di permettere al giocatore di poter mirare attraverso la pressione di un tasto, e proiettare al suo rilascio. In questo stesso momento la lanterna magica viene lasciata a terra e continua a proiettare, fino a che il giocatore non decida di riprenderla di nuovo in mano.
+Il momento dedicato alla mira, sfrutta l’utilizzo di una sagoma dell’elemento che si andrà a proiettare, così da dare immediatamente al giocatore la sensazione di come e dove verrà creato l’oggetto dello scenario.
+Il concetto di mira è stato sviluppato parallelamente all’attuale implementazione di camera e puntatore, in quanto la sagoma dell’oggetto da proiettare compare esattamente nella stessa posizione del puntatore, così da non confondere l’utente con metafore di gioco differenti.
+Come si può vedere in Figura~\ref{fig:meccaniche_precinema_swapper}, per tale meccanica ci si è ispirati al videogioco The Swapper (riferimento).
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.85\columnwidth]{images/gameDesign/21_swapper.jpg}
+	\caption{Concetto di mira espresso in The Swapper.}
+	\label{fig:meccaniche_precinema_swapper}
+\end{figure} 
+
+Un altro elemento di gioco ispirato alla Lanterna Magica è quello che abbiamo definito come \textit{mondo in divenire}.
+Come già specificato, la lanterna utilizzava dei vetrini, che potevano anche essere inseriti e rimossi durante gli spettacoli, così da permettere un evolversi delle ambientazioni e di un’eventuale storia da raccontare. Queste operazioni facevano in modo che alcuni elementi apparissero o scomparissero con un effetto di dissolvenza.
+
+Sviluppando perciò il mondo di gioco come se questo fosse un vero spettacolo di lanterna magica, abbiamo ritenuto di poter ottenere un effetto grafico suggestivo e curioso, includendo la possibilità di poter far evolvere lo scenario di gioco con l’apparizione e la scomparsa di elementi in dissolvenza.
+Questo processo è stato, in un primo momento, relazionato al raccoglimento di stelle. Il giocatore poteva quindi porsi come obiettivo quello di raggiungere una stella, così da poter far evolvere il mondo di gioco e poter proseguire con il livello.
+
+Dopo un attenta valutazione ed alcuni test effettuati, abbiamo deciso di abbandonare questa strada, anche in relazione all’inserimento di altre tipologie di collezionabili, il cui numero, sommato a quello delle stelle, avrebbe potuto confondere il giocatore per quanto concerne il ruolo di ogni elemento da raccogliere. Inoltre, era presente il rischio che il giocatore avesse dato priorità ad un obiettivo locale, il raccoglimento della stella, e perdere di vista obiettivi più generici di gioco.
+Nella attuale implementazione, quindi, l’evoluzione del mondo di gioco è assegnata a dei semplici \textit{trigger} attivati dal passaggio del personaggio (Figura~\ref{fig:meccaniche_precinema_dissolving}). Il posizionamento di tali elementi è chiaramente stato fatto con attenzione e dopo attente fasi di analisi e studio dei livelli.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/22.jpg}
+	\caption{Meccanica delle Dissolving Views.}
+	\label{fig:meccaniche_precinema_dissolving}
+\end{figure} 
+
+Le meccaniche di gioco primarie, come abbiamo analizzato, sono quindi quelle \textit{platform} e \textit{puzzle}, enfatizzate dall’utilizzo della Lanterna Magica che permette di interagire ed alterare lo scenario.
+Tali elementi di gameplay sono stati però affiancati da altre meccaniche ispirate al contesto del \textit{pre-cinema}.
+Tra gli elementi \textit{serious} del nostro videogioco, abbiamo incluso la possibilità di raccogliere degli oggetti e quindi lo sbloccare le relative schede informative che ne descrivono la storia, l’utilizzo ed eventuali curiosità a riguardo (riferimento).
+
+Nei test effettuati (riferimento) abbiamo però notato come i ragazzi fossero poco attratti dall’apertura delle schede informative e quindi dall’apprendere determinati concetti che riteniamo importanti per l’esperienza di gioco e per l’obiettivo di Tesi prefissato.
+Abbiamo quindi deciso di inserire diversi elementi aggiuntivi, tra questi alcune meccaniche di gioco, studiate appositamente, per rendere più interessante il raccoglimento di tali oggetti e quindi stimolare curiosità per l’apertura delle relative schede informative.
+
+La camera oscura (riferimento) è un particolare strumento che riproduce all’interno di una delle sue facce, l’immagine capovolta di quanto si trova di fronte al foro della faccia opposta.
+Al raccoglimento dell’oggetto relativo perciò, il personaggio si trova in una porzione di gioco già affrontata, per assicurarci che abbia dei riferimenti che non lo facciano trovare spaesato, ma con la camera ruotata di 180 gradi (Figura~\ref{fig:meccaniche_precinema_camera_oscura}). Il giocatore si trova quindi a dover far muovere il personaggio ma facendo attenzione al fatto che i comandi sono invertiti rispetto alla partita svolta fino a quel momento.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/23_cameraOscura.jpg}
+	\caption{Meccanica della Camera Oscura.}
+	\label{fig:meccaniche_precinema_camera_oscura}
+\end{figure} 
+
+Al termine di questa breve sezione, viene sbloccata la scheda informativa relativa alla camera oscura, così che l’utente possa informarsi maggiormente nel caso sia abbastanza stimolato a farlo.
+
+Per quanto riguarda le lenti, abbiamo inserito degli approfondimenti che parlano di quelle convergenti e divergenti.
+Per far sì che l’oggetto venga contestualizzato all’interno del mondo di gioco, abbiamo studiato un’apposita sezione in cui il personaggio venga rimpicciolito ed ingrandito dal passaggio attraverso delle lenti (Figura~\ref{fig:meccaniche_precinema_lenti}) e si trovi quindi a relazionarsi con elementi di gioco di diverse dimensioni, come delle fessure sui muri, che possono essere affrontati solo se si è passati attraverso la giusta sequenza di lenti.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/24_lenti.jpg}
+	\caption{Meccanica delle Lenti.}
+	\label{fig:meccaniche_precinema_lenti}
+\end{figure} 
+
+Stiamo inoltre valutando la possibilità di includere le suddette meccaniche anche in altre sezioni di gioco. Bisogna sicuramente stare attenti a sfruttarle in maniera intelligente, senza rischiare di esser confusionari e confondere l’utente. Sono state introdotte per stimolare il giocatore ad aprire le schede informative al momento del raccoglimento del relativo oggetto, se dovessero essere inserite in altre sezioni di gioco, dovremmo evitare di avvicinarle ad altri elementi contestualizzanti per non mescolare concetti tra di loro, oltre che usarle con parsimonia per non caricare il giocatore di troppe meccaniche da dover padroneggiare.
+
+\subsection{Elementi di rigiocabilità}
+\label{sec:elementi_rigiocabilita}
+
+Con elementi di rigiocabilità vogliamo intendere tutti quei componenti che possono spingere il giocatore a ricominciare livelli di gioco (o il gioco stesso) una volta che questi siano già stati portati a termine.
+Nel nostro caso, gli elementi di rigiocabilità più diretti che abbiamo voluto inserire sono le stelle ed i collezionabili. La Figura~\ref{fig:rigiocabilita_stelle_collezionabili} ne mostra degli esempi.
+
+All’interno dei livelli sono presenti degli oggetti che, una volta raccolti, sbloccano la relativa scheda informativa, sono quindi elementi coerenti col contesto, li chiameremo in maniera generica “collezionabili”. Questi sono facilmente raggiungibili dal personaggio principale. Sono generalmente ben visibili e spesso si trovano lungo il percorso primario. Essendo elementi importanti per la componente \textit{serious} del gioco, si vuole evitare che il giocatore li salti per distrazione, ma anzi sia stimolato a raccoglierli e ad informarsi riguardo ciò che ha appena raccolto.
+
+Le stelle sono invece elementi raggiungibili in maniera più difficile, richiedono sempre delle abilità di reazione, di movimento o di ragionamento superiori rispetto ai semplici collezionabili. Il loro unico scopo è quello di permettere l’assoluto completamento del livello.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/25_stelle_collezionabili.jpg}
+	\caption{Stelle ed oggetti collezionabili.}
+	\label{fig:rigiocabilita_stelle_collezionabili}
+\end{figure} 
