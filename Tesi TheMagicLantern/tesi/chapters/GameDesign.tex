@@ -434,3 +434,278 @@ Le stelle sono invece elementi raggiungibili in maniera più difficile, richiedo
 	\caption{Stelle ed oggetti collezionabili.}
 	\label{fig:rigiocabilita_stelle_collezionabili}
 \end{figure} 
+
+È importante chiarire che sia i collezionabili che le stelle non risultano essenziali alla conclusione di un livello. Il giocatore può arrivare anche al termine senza averne raccolti. L’interazione del personaggio con questi elementi non influisce sul naturale svolgimento della partita e non genera nessuna conseguenza sullo scenario di gioco, esclusi i casi di collezionabili contestualizzati, che abbiamo precedentemente analizzato (\ref{sec:meccaniche_precinema}). Stiamo comunque valutando la possibilità di inserire alcuni di questi elementi in maniera obbligatoria, o per insegnare al giocatore determinate meccaniche di gioco, o per spingerlo a leggere alcune schede informative.
+
+Le stelle sono elementi presenti in moltissimi altri giochi, primo fra tutti SuperMario. Il giocatore è naturalmente spinto a raccoglierle, senza bisogno di ulteriori spiegazioni.
+
+Valiant Hearts (riferimento) è il videogioco a cui ci siamo maggiormente ispirati per la componente \textit{Serious}, quindi, anche per la struttura dei collezionabili, così come sono stati descritti, abbiamo cercato di rifarci al gioco. Anche in Valiant Hearts il raccoglimento di determinati oggetti porta allo sbloccare schede informative che possono essere consultate liberamente dall’utente.
+Come mostrato in Figura~\ref{fig:rigiocabilita_UI_hub}, il numero di collezionabili e stelle raccolte, viene mostrato nell’hub centrale (riferimento) al passaggio del personaggio di fronte alle varie porte che conducono ai livelli. Il giocatore quindi, vedendo che un livello già giocato non risulta interamente completato, è naturalmente spinto a rigiocarlo, cercando di scoprirne tutti i segreti e quindi portarlo a termine.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/26_hub.jpg}
+	\caption{UI che indica i collezionabili e le stelle raccolte in ogni livello.}
+	\label{fig:rigiocabilita_UI_hub}
+\end{figure} 
+
+Altri elementi di rigiocabilità sono banalmente il divertimento provato dal giocatore e le varie possibilità di interazione che ha con lo scenario.
+Se una partita risulta particolarmente divertente, l’utente può essere portato a ricominciare, anche se l’esperienza di gioco può risultare non troppo differente dall’ultima partita.
+
+Inoltre, la presenza di elementi non utili alla conclusione di un livello, ma capaci di generare curiosità e stupore nel giocatore, possono spingerlo a riprovare l’esperienza di gioco, che può risultare arricchita ad ogni successiva partita.
+Ad esempio, nel terzo livello di gioco (riferimento), sono presenti, nelle prime sezioni, degli alberi che reagiscono al vento, piegandosi e lasciando foglie che fluttuano in aria. Successivamente si entra in una sezione al chiuso, in cui si raccoglie la lanterna magica ed il relativo vetrino che proietta l’immagine di Eolo che genera vento dalla sua bocca. Proseguendo con il livello, si potrà di nuovo uscire all’esterno, questa volta senza la presenza di vento, saranno comunque visibili dei nuovi alberi. Il giocatore può tranquillamente proseguire con la partita senza notarli. Ma, ad un successivo gameplay, può provare ad utilizzare la proiezione del vento e vedrebbe che tali alberi reagiscono, piegandosi e generando foglie, che sono addirittura influenzate dalla proiezione (Figura~\ref{fig:rigiocabilita_foglie}). Il giocatore può quindi perdere del tempo provando a giocare con le foglie e facendole volare a proprio piacimento.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/27_foglie.jpg}
+	\caption{Foglie mosse dalla proiezione del vento.}
+	\label{fig:rigiocabilita_foglie}
+\end{figure} 
+
+\section{Ambiente e personaggi}
+\label{sec:ambiente_personaggi}
+
+Il design di ambientazione e personaggi è stato in parte svolto prima dell’inizio del lavoro di Tesi. In tale periodo, il design realizzato da esperti nel settore del \textit{Gaming} è stato accompagnato dal supporto di un reparto grafico che ha permesso anche un dialogo prolifico per quanto riguarda il \textit{character design} e lo sviluppo di caratteristiche ambientazioni. Tale supporto è stato presente in forma minore durante il lavoro di Tesi, in quanto il reparto grafico si è soprattutto occupato di fornire \textit{asset} utili allo sviluppo pratico del videogioco. Il Design, da questo punto di vista, si è perciò limitato a sottolineare alcuni elementi emersi durante le precedenti sessioni e a far emergere nuovi dettagli che, durante le fasi di sviluppo ed ideazione dei livelli, si sono delineati come importanti per l’immersione ed il coinvolgimento del giocatore.
+
+Nei successivi paragrafi verranno affrontati, in maniera più approfondita, i percorsi di design dell’ambientazione e del \textit{character design} del personaggio principale e dei nemici.
+
+\subsection{Ambientazione}
+\label{sec:ambientazione}
+
+Per quanto riguarda il design dell’ambientazione e del mondo di gioco, abbiamo deciso di ispirarci agli elementi presenti negli spettacoli dell’epoca. Il reparto grafico ha quindi realizzato delle possibili ambientazioni utili a trarre ispirazione anche per le fasi di design delle meccaniche e dei personaggi.
+
+L’idea preliminare di gioco era quella di avere un personaggio con l’abilità di trovarsi ed attraversare vari mondi, ognuno caratterizzato da un proprio tema. Ognuna di queste ambientazioni sarebbe quindi stata descritta da uno stile grafico pertinente allo spettacolo da cui si era preso spunto. Coerentemente con l’ambiente, anche lo stile dei personaggi e degli oggetti interagibili, sarebbe cambiato per assicurare una coinvolgente armonia visiva. Ogni ambiente di gioco sarebbe quindi stato caratterizzato da meccaniche differenti, in armonia con l’aspetto grafico.
+In Figura~\ref{fig:ambientazione_teatro_ombre} viene mostrata un'ambientazione ispirata agli spettacoli del teatro delle ombre. Queste sezioni sarebbero state caratterizzate da un gameplay basato fortemente sul contrasto tra zone di luce e di ombra, da utilizzare per evitare di essere visti da i nemici. Chiaramente tale meccanica sarebbe potuta essere sfruttata anche dai nemici, che, come si può vedere dall’immagine sono caratterizzati da un occhio molto luminoso. Questo, ad intervalli regolari, veniva chiuso dal nemico, che quindi si mimetizzava perfettamente nelle zone scure.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/28_cinefuochi.jpg}
+	\caption{Ambientazione ispirata agli spettacoli del Teatro delle Ombre.}
+	\label{fig:ambientazione_teatro_ombre}
+\end{figure} 
+
+Tale approccio però, avrebbe rischiato di frustrare il giocatore in quanto, un grande numero di meccaniche differenti, accompagnate da cambi frequenti di ambientazione, potrebbe non essere facilmente assimilabile e padroneggiabile dall’utente. Abbiamo perciò deciso di focalizzarci su una singola tematica e cercato di approfondirla così da renderla più piacevole da scoprire e con maggiori possibilità di \textit{gameplay}.
+Tale ambientazione principale potrà essere accompagnata, se ritenuto necessario, anche da altre ambientazioni e relative meccaniche, che però compariranno in maniera minore, e fungeranno da accompagnamento alla vera esperienza.
+
+L’idea sviluppata, quindi, dopo le fasi di design, è stata quella di caratterizzare l’ambiente con elementi tipici degli spettacoli di Lanterna Magica (Figura~\ref{fig:ambientazione_lanterna}). Il mondo di gioco sarà quindi visivamente abbastanza attraente, caratterizzato da colorazioni forti, con tinte pastello ed abbastanza ricche di elementi su schermo. Risulta importante ricordare che i vetrini utilizzati in questi spettacoli erano prodotti da artisti differenti, presentano perciò vari stili e metodologie di disegno. Questo permette al reparto artistico una certa flessibilità nella creazione di \textit{asset} per il videogioco, pur prendendo ispirazione da oggettistica ed elementi realmente utilizzati.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.5\columnwidth]{images/gameDesign/29_lanterna.jpg}
+	\caption{Vetrino di Lanterna Magica che mostra una tipica ambientazione.}
+	\label{fig:ambientazione_lanterna}
+\end{figure} 
+
+Poiché lo scopo del lavoro è stato lo sviluppo di un prototipo, spesso vengono a mancare degli elementi estetici che caratterizzano invece la realizzazione di un prodotto completo. Gli sfondi che fungono da ambientazione per il mondo di gioco non sono quindi stati realizzati dal reparto grafico, in quanto non essenziali per lo sviluppo di un prototipo.
+L’aspetto attuale del prodotto non ha quindi assolutamente attinenza con ciò che dovrà essere al termine dello sviluppo.
+Per la verifica e l’evoluzione delle meccaniche di gioco, abbiamo quindi utilizzato sfondi ed elementi senza apporto artistico.
+
+Graficamente, abbiamo deciso di rappresentare il terreno con colorazioni uniformi, artisticamente non rilevanti, ma comprensibili dal punto di vista del giocatore.
+Abbiamo comunque ritenuto necessario un supporto grafico di buon livello per quanto riguarda gli elementi che avrebbero potuto influenzare l’esperienza di gioco degli utenti. Ci si è perciò assicurati che la comprensibilità degli elementi di gioco, tra cui l’interfaccia grafica e le componenti caratterizzanti le meccaniche di gioco, fosse sempre garantita.
+Per quanto riguarda questi elementi, verranno trattati, dove necessario, nel capitolo relativo all’analisi dei livelli sviluppati.
+
+Il prodotto finito sarà quindi dotato di ambientazioni artisticamente più valide.
+
+%\begin{figure}%[h]
+%	\centering
+%	\includegraphics[width= 0.5\columnwidth]{images/gameDesign/30_grafica.jpg}
+%	\caption{Esempio di elementi creati dal team grafico: cassa, bottoni, porta.}
+%	\label{fig:ambientazione_team_grafico}
+%\end{figure} 
+
+\subsection{Personaggio principale}
+\label{sec:main_character}
+
+In Figura~\ref{fig:ambientazione_personaggio_01} vengono riportati alcuni schizzi sviluppati dalla componente del reparto grafico che si è occupato di \textit{Character Design}.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/31_personaggio_02.jpg}
+	\caption{Schizzi del personaggio realizzati dal reparto grafico.}
+	\label{fig:ambientazione_personaggio_01}
+\end{figure} 
+
+Come si può notare, le prime idee sviluppate prevedevano il controllo di un ragazzino, con una caratterizzazione che poteva farlo apparire interessato all’ambito culturale e quindi museale, da notare in particolar modo gli occhiali e la borsa a tracolla da studente. Parallelamente aveva però anche un aspetto molto giovanile e ribelle, sicuramente più attraente per un pubblico giovane. A tal riguardo, sono da sottolineare le scarpe, la camicia fuori dai pantaloni e la maglietta che esce dalla camicia.
+Era dipinto con una silouette molto riconoscibile e quindi in possesso di una importante caratterizzazione.
+
+Un personaggio del genere però, non sarebbe risultato molto attinente con le finalità di gioco. Il prodotto prevedeva che il personaggio fosse una trasposizione distorta del giocatore all’interno dell’ambientazione, così da permettere una maggiore immedesimazione. Caratterizzare quindi eccessivamente il personaggio avrebbe rischiato di sortire l’effetto contrario, e quindi allontanare e far percepire più distante il giocatore dal mondo di gioco.
+
+Il passo successivo è stato quindi quello di studiare un nuovo personaggio, ma con caratteristiche più neutre, più impersonali e quindi più adatte allo scopo.
+È stata scelta una colorazione scura uniforme, senza eccessivi dettagli, con i due occhi che spiccano decisamente rispetto al corpo. Inizialmente era stato anche ipotizzato di dotare il personaggio di un solo occhio, poi si è accantonata questa ipotesi, per distinguerlo maggiormente dai nemici. Il personaggio può comunque essere dotato di un vestito che possa renderlo più attraente e meno spoglio.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/32_personaggio_03.jpg}
+	\caption{Schizzi più impersonali del personaggio realizzati dal reparto grafico.}
+	\label{fig:ambientazione_personaggio_02}
+\end{figure}
+
+Come già spiegato nel capitolo relativo al design per le ambientazioni, per quanto riguarda gli asset sviluppati per il prototipo, ci siamo limitati a quegli elementi essenziali per la comprensibilità, l’usabilità e quindi verifica delle meccaniche di gioco.
+
+Per quanto riguarda il personaggio quindi, abbiamo utilizzato i disegni forniti gratuitamente da David Hellman \cite{DavidHellmanSite} ed utilizzati per il videogioco Braid, da lui ideato e sviluppato.
+Attualmente quindi, anche per quanto riguarda il personaggio principale, l’aspetto ottenuto, non è attinente con ciò che verrà mostrato nel prodotto finale.
+
+\subsection{Nemici}
+\label{sec:nemici}
+
+Per quanto riguarda il design dei nemici si è scelto di caratterizzarli con un solo grande occhio ed un corpo buffo. Poiché le arti di cui trattiamo sono visive, i mostri hanno un occhio grande che possa riportare al concetto di visione. Nel concept iniziale, inoltre, il gioco assumeva una caratteristica molto più \textit{stealth}, con l’utilizzo costante dell’alternanza tra zone illuminate e zone d’ombra, così che l’occhio grande avesse ben potuto rendere l’idea del nemico cacciatore.
+
+Nelle prime versioni del nemico, questo possedeva delle ciglia minacciose che avrebbero dovuto spingere il giocatore a fare attenzione nell’avvicinarsi ad esso (Figura~\ref{fig:ambientazione_nemico_01}).
+Il corpo dovrebbe simulare l’idea di una lacrima scura che viene generata dall’occhio stesso.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/33_nemici.jpg}
+	\caption{Schizzi del nemico realizzati dal reparto grafico.}
+	\label{fig:ambientazione_nemico_01}
+\end{figure}
+
+L’idea preliminare di concept prevedeva che, mentre il personaggio fosse la trasposizione del giocatore nell’ambiente di gioco, i nemici fossero una rappresentazione astratta degli altri visitatori e di altri elementi del museo.
+A partire quindi dall’idea base sono state sviluppate varie tipologie di nemici, osservabili in Figura~\ref{fig:ambientazione_nemico_02}, in ognuna con caratteristiche e comportamenti differenti a seconda della situazione:
+
+\begin{itemize}
+	\item \textbf{Minion}. Si tratta del nemico base. Molto goffo e quasi inoffensivo. È la trasposizione dei bambini che visitano il museo.
+	\item \textbf{Predatore}. Ha denti più affilati, è più veloce e più intelligente. Trasposizione degli adulti, accompagnatori dei bambini.
+	\item \textbf{Spesso}. È alto e con spalle larghe. Ha denti più grossi. È lento ed immune alle trappole. Trasposizione dei guardiani del museo.
+	\item \textbf{Volante sentinell}. Un grande occhio alato. Non ha denti e non può ferire, ma avverte gli altri della presenza del personaggio principale. Trasposizione delle telecamere del museo.
+	\item \textbf{Volante rapace}. Simile alla sentinella, ma con aspetto più minaccioso. Può ferire. Trasposizione dei piccioni della Mole Antonelliana di Torino.
+\end{itemize}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/34_nemici.jpg}
+	\caption{Schizzi delle varie tipologie di nemici.}
+	\label{fig:ambientazione_nemico_02}
+\end{figure}
+
+Una volta delineate le meccaniche principali di gioco e le possibili ambientazioni, è stata quindi analizzata ogni tipologia di nemico, così da studiarne le caratteristiche ed estrapolarne ogni possibile meccanica interessante ai fini del gameplay.
+
+È importante che ogni tipologia di nemico abbia caratteristiche uniche e non sovrapponibili, così da giustificarne l’esistenza e assicurare che il giocatore capisca il modo di approcciare ogni minaccia nel modo appropriato. Risulta fondamentale anche caratterizzarli a livello grafico, così che ogni azione sia giustificata e il comportamento possa essere prevedibile ancora prima che entrino in azione.
+
+In seguito alla fase di design delle principali meccaniche, e dopo aver considerato gli obiettivi primari dello sviluppo del prototipo, abbiamo deciso di utilizzare due tipologie di nemici, visibili in Figura~\ref{fig:ambientazione_nemico_03}:
+
+\begin{itemize}
+	\item \textbf{Dumb}. È un personaggio goffo caratterizzato dall’aver l’occhio chiuso. Avanza fino ad incontrare un ostacolo e quindi torna indietro in un moto continuo. Uccide il personaggio principale al contatto. Può essere ucciso con un salto in testa o nel momento in cui raggiunge elementi danneggianti, come le punte infilzanti. Il salto in testa fornisce al personaggio una spinta verso l’alto.
+	\item \textbf{Guard}. Graficamente risulta simile al dumb, se non fosse per un aspetto meno goffo e per l’avere l’occhio aperto. L’occhio suggerisce che controlli una porzione di scenario. Può trovarsi fermo in una posizione o proseguire con un moto simile a quello del dumb. Nel momento in cui vede il player di fronte a lui, entro un determinato raggio, inizia un’animazione di carica. Quando il personaggio esce dal suo campo visivo, risulta spaesato per qualche istante, poi torna alla precedente situazione. Il personaggio viene istantaneamente ucciso al contatto. Può essere stordito da un salto in testa del personaggio. Non viene ucciso se non andando a contatto di un elemento danneggiante, come le punte. Il salto in testa fornisce al personaggio una spinta verso l’alto.
+\end{itemize}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/35_nemici.jpg}
+	\caption{Tipologie di nemici utilizzate nel prototipo.}
+	\label{fig:ambientazione_nemico_03}
+\end{figure}
+
+Il \textit{dumb} è il primo nemico che si incontra, il suo comportamento è facile e prevedibile, viene utilizzato per permettere al giocatore di familiarizzare in maniera intuitiva con i nemici. Viene sfruttato soprattutto per premere pulsanti posti in luoghi non favorevoli al player o per raggiungere luoghi elevati grazie alla possibilità di saltargli in testa. Può essere guidato in diverse sezioni di gioco, ad esempio, cercando di sostituire un eventuale caduta con una proiezione di piattaforma (riferimento) o eliminando un ostacolo, ad esempio aprendo una porta.
+
+Il \textit{guard} è un nemico più difficile da affrontare, in quanto reagisce direttamente alla presenza del nemico. Il moto di carica è più veloce di quello della semplice camminata, oltre che del player stesso, che è perciò costretto a fuggire o saltarlo con repentinità. La differenza principale di gameplay rispetto al \textit{dumb} consiste nel fatto che possa essere “guidato” facilmente in differenti sezioni di gioco, comportamento dovuto alla natura stessa del nemico che tende ad inseguire il personaggio.
+
+\section{Audio e Suoni}
+\label{sec:audio}
+
+Per quanto riguarda l’audio presente del gioco, non siamo stati accompagnati da un reparto di esperti. Abbiamo quindi effettuato un design approfondito anche da questo punto di vista. 
+
+Ogni elemento sonoro inserito è stato trovato online, dopo attente ricerche relative alle tematiche ed alle tipologie di suoni necessari. Chiaramente ogni elemento adoperato, è caratterizzato da una licenza gratuita, quindi liberamente utilizzabile per gli scopi del nostro progetto.
+
+Per quanto riguarda la musica presente nei livelli, abbiamo ritenuto opportuno inserire, nell’\textit{hub centrale}, un tema che avesse generato sensazioni di sospensione e mistero. Il campione audio inserito è tale per cui la prima sezione risulti differente dalla seconda, caratterizzata invece da toni che generano sorpresa di fronte ai nuovi elementi che vengono mostrati a schermo e scoperti dal giocatore per la prima volta.
+Nelle successive visite all’\textit{hub}, che avvengono nella transizione tra i livelli, la musica mantiene comunque una caratterizzazione misteriosa pur adattandosi alle nuove tematiche ascoltate nei livelli.
+
+Questi sono caratterizzati da musiche decisamente più allegre. Il primo livello in particolare possiede un tema musicale molto frenetico ed agitato, che spinge il giocatore ad affrontare le prime sezioni \textit{platform} con spensieratezza, senza porre l’attenzione su elementi troppo impegnativi dal punto di vista della logica di gioco.
+Con l’evolversi dei livelli, le musiche diventano decisamente più adatte alle meccaniche \textit{puzzle}, restano comunque luminose ed allegre, ma decisamente meno frenetiche di quella ascoltata nel primo livello. Tali temi tendono a rilassare il giocatore, pur mantenendo alta la sua attenzione durante le sezioni che richiedono maggiori abilità di ragionamento.
+
+\section{Level Design}
+\label{sec:level_design}
+
+Per \textit{Level Design} si intende la creazione dell’ambiente di gioco a partire dalle meccaniche che si è deciso di includere. È un elemento di fondamentale importanza nella creazione di un prodotto videoludico. Senza un buon \textit{Level Design} l’esperienza può risultare noiosa e poco stimolante o eccessivamente frustrante, anche in presenza di ottime meccaniche di gioco.
+
+\subsection{Principi di Level Design}
+\label{sec:principi_level_design}
+
+Nell’affrontare il design dei livelli sviluppati, abbiamo cercato di seguire dei passi che ci avessero permesso di ottenere i risultati prefissati, in modo ordinato.
+La prima fase è quella di cercare di elencare ogni elemento che deve essere presente nel livello. Con “elemento” non si intendono solo gli oggetti che popolano lo scenario, ma anche quello che il giocatore deve riuscire ad imparare, a padroneggiare e le sfide di fronte a cui si deve porre. A titolo di esempio vengono riportati alcuni obiettivi che ci siamo posti per il primo livello:
+
+\begin{itemize}
+	\item Il giocatore deve imparare ad usare i tasti direzionali per muoversi.
+	\item Deve imparare ad usare il salto.
+	\item Deve padroneggiare la meccanica del salto.
+	\item Deve capire che, attraverso l’utilizzo del puntatore, può osservare altre sezioni di gioco.
+	\item Deve capire e dare per scontate le differenze tra le varie tipologie di terreno.
+\end{itemize}
+
+Una volta chiariti quali devono essere gli obiettivi, si inizia a disegnare su carta alcune sezioni che permettono di raggiungere lo scopo prefissato. Ogni sezione viene quindi analizzata attentamente per capire eventuali criticità, se sia necessario farla precedere da una sezione più facile con lo stesso scopo, se possa risultare troppo difficile per il livello scelto.
+
+Dopo aver creato un buon numero di porzioni di livello si prova ad assemblarlo ed analizzarlo nel suo complesso per capire se ci sia necessità di inserire nuove sezioni o eliminarne di esistenti.
+È in questo punto che risulta fondamentale il discorso già intrapreso in altri capitoli riguardo il cercare di mantenere l’utente nella situazione di \textit{flow} (Figura~\ref{fig:level_design_flow}). È infatti in questi momenti, in cui il giocatore non è annoiato o frustrato, che si possono ottenere, come risultati:
+
+\begin{itemize}
+	\item Estrema attenzione sull’obiettivo.
+	\item Senso di controllo dell’azione.
+	\item Sinergia tra azione e consapevolezza.
+	\item Immedesimazione.
+	\item Distorsione dell’esperienza del tempo.
+	\item La ricerca dell’obiettivo che spinge a continuare.
+\end{itemize}
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/36_flow.jpg}
+	\caption{Rappresentazione grafica della situazione di Flow.}
+	\label{fig:level_design_flow}
+\end{figure}
+
+Per far sì che il giocatore mantenga queste condizioni, è necessario che il livello accompagni l’utente lungo una curva di apprendimento che gli permetta di comprendere con facilità le meccaniche di gioco, di aumentare progressivamente il livello di difficoltà e permettere quindi un padroneggiamento delle meccaniche che generi soddisfazione e gratificazione.
+È quindi necessario un attento studio degli elementi di gioco e degli equilibri che si devono venire a creare lungo la progressione del livello.
+Una volta che si ha l’idea della struttura generale del livello, questo viene testato a fondo e modificato di conseguenza, in modo da perfezionare ogni dettaglio dell’esperienza di gioco, assicurandosi che gli obiettivi, che si erano descritti nella fase iniziale del \textit{Level Design}, siano stati raggiunti.
+I passi che abbiamo seguito, e precedentemente descritto, sono in parte ispirati dall’articolo di Diorgo Jonkers, “How to design levels for a platformer” \cite{DiorgoJonkersArticle}.
+
+Anche il libro The Art Of Game Design \cite{artOfGameDesign}, di Jesse Schell, fornisce alcuni interessanti spunti a riguardo, che ci hanno aiutato nella creazione delle varie sezioni di gioco.
+
+La prima idea che emerge dall’analisi del capitolo “Game Mechanics Support Puzzles” è che i puzzles sono ovunque in un videogioco, spesso sono visibili e mostrati come tali, altre volte sono insiti nel gameplay, così da sembrare nascosti. Jesse Schell definisce puzzle ogni elemento di gioco che faccia fermare e pensare. Anche i giochi puramente action possiedono un gran numero di componenti puzzle, basti pensare ad una possibile battaglia con un boss di gioco. Il riuscire a capire il suo punto debole e come sfruttarlo a proprio vantaggio è un elemento puzzle. In un gioco di corse in cui si cerca di capire come superare l’avversario e si decide di sfruttarne la scia per ottenere una maggiore velocità, si sta risolvendo un puzzle. Ogni sezione di gioco che richieda l’utilizzo di una meccanica, in maniera non scontata, ha una componente puzzle.
+
+Con l’evolversi dei videogiochi c’è stato un graduale passaggio dal puzzle esplicito a quello implicito, ma è esclusivamente dovuto al cambiamento di gusti dei giocatori ed alla maturazione delle abilità dei game designers.
+L’autore ha definito dei principi, che abbiamo ritenuto fondamentali nello sviluppare ed architettare in maniera armoniosa tutti i livelli di gioco:
+
+\begin{itemize}
+	\item \textbf{Rendere l’obiettivo facile da capire.} Per fare in modo che i giocatori siano interessati, devono sapere cosa ci si aspetti che facciano.
+	\item \textbf{Deve essere facile iniziare.} Una volta che il giocatore capisce l’obiettivo del puzzle, inizia a risolverlo. E con alcuni puzzle, è abbastanza chiaro come iniziare, sebbene non sia ovvio come risolverlo.
+	\item \textbf{Dare un senso di progressione.} Ai giocatori piace la sensazione di fare progressi nel risolvere una situazione, dà loro speranza di stare arrivando alla risposta.
+	\item \textbf{Dare un senso di risolvibilità.} Se il giocatore inizia a dubitare del fatto che un puzzle sia risolvibile, può diventare preoccupato del fatto di star perdendo tempo. Un modo per assicurarsi che ciò non avvenga è appunto mostrare dei progressi.
+	\item \textbf{Aumentare gradualmente la difficoltà.} Abbiamo analizzato più volte questo punto. È un discorso che va molto al di là del singolo puzzle. In questo caso si intende la crescente difficoltà nel proporre al giocatore puzzle simili ma con soluzioni sempre più difficili, che lo invitino a superare i limiti raggiunti precedentemente.
+	\item \textbf{Parallelizzare fa riposare il giocatore.} I puzzle, come già detto, fanno pensare a ragionare. C’è perciò il rischio concreto che un giocatore, incapace di fare progressi, abbandoni il gioco. Un buon modo per evitare questo comportamento è fornire contemporaneamente differenti puzzle, così che l’utente possa dedicarsi ad uno di questi e, nel caso dovesse fermarsi troppo a lungo, potersi dedicare ad un altro.
+	\item \textbf{Un struttura a piramide estende l’interesse.} Significa che un insieme di piccoli puzzle, ognuno dei quali fornisce un piccolo indizio riguardo un puzzle più grande, aumentano l’interesse del giocatore. In questo modo è facile fornire dei piccoli obiettivi, raggiungibili più facilmente, che concorrono al raggiungimento di un obiettivo maggiore.
+	\item \textbf{Gli aiuti estendono l’interesse.} Quando un giocatore sta per abbandonare un puzzle perché troppo difficile, fornirgli un aiuto può rinnovare la sua speranza e curiosità.
+	\item \textbf{Dare la risposta.} Spesso basta far ragionare il giocatore e dare una risposta differente al puzzle. L’utente trova soddisfacente il momento in cui la risposta gli viene rivelata, anche se lui era arrivato ad una diversa conclusione. È lo stesso ragionamento che viene fatto per i libri, il lettore può immaginare un finale, ma è l’autore che fornisce la risposta e può essere completamente diversa da quella che si aspettava il lettore. Questo mezzo, se usato attentamente, può dare molta soddisfazione all’utente, portandolo ad incuriosirsi attraverso la sorpresa.
+	\item \textbf{I “cambiamenti percettivi” sono un’arma a doppio taglio.} Per cambiamenti percettivi si intendono quei momenti in cui, osservando un determinato puzzle, si riesce a scoprire improvvisamente la soluzione, magari semplicemente cambiando prospettiva o attraverso un’idea inaspettata. Questo tipo di puzzle rischiano di portare a frustrazione il giocatore, in quanto si ottiene una grande soddisfazione nel caso si riesca a risolverlo, ma c’è un grande rischio che questo non avvenga, se, appunto, non si riesce ad avere l’idea giusta.
+\end{itemize}
+
+Come si vedrà nell’analisi dei livelli (riferimento) i concetti appena espressi hanno fornito una perfetta base per la creazione e lo sviluppo dei livelli di gioco.
+
+\subsection{Scelte relative alla struttura dei livelli}
+\label{sec:struttura_livelli}
+
+Nelle prime fasi di Design si è deciso di strutturare l’esperienza di gioco in due fasi ben distinte. All’avvio della partita il giocatore si sarebbe trovato all’interno del museo. L’ambientazione sarebbe stata interamente in 3D, con la possibilità di controllare in prima persona il proprio personaggio. La visita al museo sarebbe dovuta proseguire in maniera lineare lungo un percorso standard. Sarebbero state presenti quindi teche con oggettistica e relative descrizioni.
+All’interno dell’ambiente però, alcuni elementi avrebbero permesso al giocatore di infrangere delle regole e perciò uscire dalla visita standard, come una porta con scritto “Staff Only” (Figura~\ref{fig:level_design_staffonly}) o una teca con cui poter interagire per aprirla.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/37_museo3d.jpg}
+	\caption{Rappresentazione tridimensionale del museo ipotizzata nelle prime sessioni di Design.}
+	\label{fig:level_design_staffonly}
+\end{figure}
+
+Nel momento in cui il player avesse commesso quindi un’azione non prevista dalle regole dal museo, sarebbe entrato in un mondo parallelo, interamente bidimensionale, in cui sarebbero stati presenti la sua trasposizione e quella di tutti gli altri visitatori del museo.
+L’ambientazione avrebbe dovuto rispecchiare gli spettacoli dell’epoca del pre-cinema, ispirandosi quindi, sia per meccaniche che per rappresentazione, all’oggettistica di riferimento.
+I capitoli (riferimenti) affrontano in maniera approfondita l’analisi del design di ambientazioni e dei personaggi.
+
+Dopo un’attenta analisi, si è preferito eliminare la prima sezione di gioco in prima persona, perché il passaggio alla seconda non sarebbe stato così immediato, oltre che rischioso da un punto di vista del messaggio comportamentale che avrebbe potuto trasmettere.
+
+Si è quindi deciso di fare in modo che l’esperienza del giocatore non fosse direttamente collegata all’idea di museo, ma che ne richiamasse alcuni aspetti in maniera indiretta.
+L’avventura avrebbe quindi assunto una caratterizzazione differente, con connotazioni pesantemente esperienziali. Si è pensato di abbandonare l’idea di sviluppare una ricca componente di storyline, ma far sì che l’esperienza vissuta dal giocatore fosse data dall’immersività nel mondo di gioco e dalle sensazioni che questo gli avesse potuto trasmettere.
+Per questo tipo di approccio ci siamo in parte ispirati a videogiochi come LIMBO (riferimento), in cui si controlla un ragazzino, di cui si intuisce solo la sagoma. Ci si trova in un mondo, che ha l’aspetto di una foresta, ricco di pericoli, che metteranno a rischio l’incolumità del personaggio. Non è chiaro il perché il ragazzo si trovi in una tale situazione, ma è evidente che deve cercare di uscirne. L’esperienza di gioco è data appunto dalle sensazioni provate dal giocatore, garantite da un’ambientazione ricca di fascino e da meccaniche efficaci.
+
+
+\section{Serious Game}
+\label{sec:design_serious}
+
+\section{Interfaccia}
+\label{sec:design_interfaccia}
