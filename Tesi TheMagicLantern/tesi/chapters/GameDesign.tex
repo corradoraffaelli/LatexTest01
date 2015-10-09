@@ -394,6 +394,8 @@ Tra gli elementi \textit{serious} del nostro videogioco, abbiamo incluso la poss
 Nei test effettuati (riferimento) abbiamo però notato come i ragazzi fossero poco attratti dall’apertura delle schede informative e quindi dall’apprendere determinati concetti che riteniamo importanti per l’esperienza di gioco e per l’obiettivo di Tesi prefissato.
 Abbiamo quindi deciso di inserire diversi elementi aggiuntivi, tra questi alcune meccaniche di gioco, studiate appositamente, per rendere più interessante il raccoglimento di tali oggetti e quindi stimolare curiosità per l’apertura delle relative schede informative.
 
+\paragraph{Camera Oscura}
+\label{par_meccanica_camera_oscura}
 La camera oscura (riferimento) è un particolare strumento che riproduce all’interno di una delle sue facce, l’immagine capovolta di quanto si trova di fronte al foro della faccia opposta.
 Al raccoglimento dell’oggetto relativo perciò, il personaggio si trova in una porzione di gioco già affrontata, per assicurarci che abbia dei riferimenti che non lo facciano trovare spaesato, ma con la camera ruotata di 180 gradi (Figura~\ref{fig:meccaniche_precinema_camera_oscura}). Il giocatore si trova quindi a dover far muovere il personaggio ma facendo attenzione al fatto che i comandi sono invertiti rispetto alla partita svolta fino a quel momento.
 
@@ -406,6 +408,8 @@ Al raccoglimento dell’oggetto relativo perciò, il personaggio si trova in una
 
 Al termine di questa breve sezione, viene sbloccata la scheda informativa relativa alla camera oscura, così che l’utente possa informarsi maggiormente nel caso sia abbastanza stimolato a farlo.
 
+\paragraph{Lenti}
+\label{par_meccanica_lenti}
 Per quanto riguarda le lenti, abbiamo inserito degli approfondimenti che parlano di quelle convergenti e divergenti.
 Per far sì che l’oggetto venga contestualizzato all’interno del mondo di gioco, abbiamo studiato un’apposita sezione in cui il personaggio venga rimpicciolito ed ingrandito dal passaggio attraverso delle lenti (Figura~\ref{fig:meccaniche_precinema_lenti}) e si trovi quindi a relazionarsi con elementi di gioco di diverse dimensioni, come delle fessure sui muri, che possono essere affrontati solo se si è passati attraverso la giusta sequenza di lenti.
 
@@ -585,8 +589,8 @@ Una volta delineate le meccaniche principali di gioco e le possibili ambientazio
 In seguito alla fase di design delle principali meccaniche, e dopo aver considerato gli obiettivi primari dello sviluppo del prototipo, abbiamo deciso di utilizzare due tipologie di nemici, visibili in Figura~\ref{fig:ambientazione_nemico_03}:
 
 \begin{itemize}
-	\item \textbf{Dumb}. È un personaggio goffo caratterizzato dall’aver l’occhio chiuso. Avanza fino ad incontrare un ostacolo e quindi torna indietro in un moto continuo. Uccide il personaggio principale al contatto. Può essere ucciso con un salto in testa o nel momento in cui raggiunge elementi danneggianti, come le punte infilzanti. Il salto in testa fornisce al personaggio una spinta verso l’alto.
-	\item \textbf{Guard}. Graficamente risulta simile al dumb, se non fosse per un aspetto meno goffo e per l’avere l’occhio aperto. L’occhio suggerisce che controlli una porzione di scenario. Può trovarsi fermo in una posizione o proseguire con un moto simile a quello del dumb. Nel momento in cui vede il player di fronte a lui, entro un determinato raggio, inizia un’animazione di carica. Quando il personaggio esce dal suo campo visivo, risulta spaesato per qualche istante, poi torna alla precedente situazione. Il personaggio viene istantaneamente ucciso al contatto. Può essere stordito da un salto in testa del personaggio. Non viene ucciso se non andando a contatto di un elemento danneggiante, come le punte. Il salto in testa fornisce al personaggio una spinta verso l’alto.
+	\item \textbf{Dumb}. \label{dumb} È un personaggio goffo caratterizzato dall’aver l’occhio chiuso. Avanza fino ad incontrare un ostacolo e quindi torna indietro in un moto continuo. Uccide il personaggio principale al contatto. Può essere ucciso con un salto in testa o nel momento in cui raggiunge elementi danneggianti, come le punte infilzanti. Il salto in testa fornisce al personaggio una spinta verso l’alto.
+	\item \textbf{Guard}. \label{guard} Graficamente risulta simile al dumb, se non fosse per un aspetto meno goffo e per l’avere l’occhio aperto. L’occhio suggerisce che controlli una porzione di scenario. Può trovarsi fermo in una posizione o proseguire con un moto simile a quello del dumb. Nel momento in cui vede il player di fronte a lui, entro un determinato raggio, inizia un’animazione di carica. Quando il personaggio esce dal suo campo visivo, risulta spaesato per qualche istante, poi torna alla precedente situazione. Il personaggio viene istantaneamente ucciso al contatto. Può essere stordito da un salto in testa del personaggio. Non viene ucciso se non andando a contatto di un elemento danneggiante, come le punte. Il salto in testa fornisce al personaggio una spinta verso l’alto.
 \end{itemize}
 
 \begin{figure}%[h]
@@ -701,11 +705,338 @@ Dopo un’attenta analisi, si è preferito eliminare la prima sezione di gioco i
 
 Si è quindi deciso di fare in modo che l’esperienza del giocatore non fosse direttamente collegata all’idea di museo, ma che ne richiamasse alcuni aspetti in maniera indiretta.
 L’avventura avrebbe quindi assunto una caratterizzazione differente, con connotazioni pesantemente esperienziali. Si è pensato di abbandonare l’idea di sviluppare una ricca componente di storyline, ma far sì che l’esperienza vissuta dal giocatore fosse data dall’immersività nel mondo di gioco e dalle sensazioni che questo gli avesse potuto trasmettere.
-Per questo tipo di approccio ci siamo in parte ispirati a videogiochi come LIMBO (riferimento), in cui si controlla un ragazzino, di cui si intuisce solo la sagoma. Ci si trova in un mondo, che ha l’aspetto di una foresta, ricco di pericoli, che metteranno a rischio l’incolumità del personaggio. Non è chiaro il perché il ragazzo si trovi in una tale situazione, ma è evidente che deve cercare di uscirne. L’esperienza di gioco è data appunto dalle sensazioni provate dal giocatore, garantite da un’ambientazione ricca di fascino e da meccaniche efficaci.
+Per questo tipo di approccio ci siamo in parte ispirati a videogiochi come LIMBO (riferimento), in cui si controlla un ragazzino, di cui si intuisce solo la sagoma. Ci si trova in un mondo, che ha l’aspetto di una foresta, ricco di pericoli, che metteranno a rischio l’incolumità del personaggio (Figura~\ref{fig:level_design_limbo}). Non è chiaro il perché il ragazzo si trovi in una tale situazione, ma è evidente che deve cercare di uscirne. L’esperienza di gioco è data appunto dalle sensazioni provate dal giocatore, garantite da un’ambientazione ricca di fascino e da meccaniche efficaci.
 
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/38_limbo.jpg}
+	\caption{Screenshot del videogioco Limbo.}
+	\label{fig:level_design_limbo}
+\end{figure}
+
+L’utilizzo di collezionabili e di stelle da poter raccogliere nei vari livelli, ha fatto emergere la necessità di fornire al giocatore un mezzo per poter controllare quali fossero stati completati o meno e quindi un modo per potervi accedere in maniera veloce intuitiva.
+Si è quindi deciso di sviluppare un \textit{hub centrale} da cui poter raggiungere i vari livelli sviluppati.
+
+Il player quindi, all’uscita di ogni livello si ritrova nell’hub. Da qui può accedere al livello successivo o può controllare il grado di completamento dei livelli già affrontati, così da decidere se rigiocarli o meno.
+Come possibile vedere in Figura~\ref{fig:rigiocabilita_UI_hub}, al passaggio di fronte alla porta di accesso di ogni livello vengono quindi mostrate delle barre laterali che indicano il numero di stelle e di collezionabili raccolti.
+
+Inoltre, attraverso l’utilizzo dell’hub, è stato possibile pensare ad un modo efficace di giustificare il raccoglimento di stelle durante l’attraversamento dei livelli.
+Attualmente, in tale scena di raccordo, sono presenti degli strumenti, le \textit{lanterne mammut}, che possono essere accese solo se si riesce a soddisfare dei requisiti minimi per quanto riguarda il raccoglimento delle stelle.
+Le 4 lanterne mammut poste in 4 angoli dello schermo proiettano in una stessa porzione di scena, che conterrà quindi la sovrapposizione delle immagini di tutte le lanterne. Un utilizzo tipico delle lanterne magiche era appunto quello di sovrapporre vetrini, ognuno con delle sezioni trasparenti, così da ottenere immagini composite più complesse.
+
+L’utilizzo di tale immagine composta è ancora in fase di design. Si sta pensando di sfruttarle per la componente di \textit{storyline}. È necessario quindi studiare 4 vetrini che, sovrapposti progressivamente, possano fornire un’evoluzione visiva di un tema o una situazione che si intende trattare.
+L’ultimo vetrino deve essere studiato in modo che fornisca uno stravolgimento del tema, così da stupire il giocatore e giustificare il raccoglimento di tutte le stelle.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/40_premi.jpg}
+	\caption{Progressione delle ricompense ottenibili nell'hub centrale.}
+	\label{fig:level_design_ricompense}
+\end{figure}
+
+Chiaramente tale sviluppo richiede un pesante sforzo di design oltre che un apporto artistico attivo e di buon spessore.
+Come è possibile vedere in Figura~\ref{fig:level_design_ricompense}, attualmente le immagini componibili sono strutturate secondo questa progressione, che non rispecchia l’idea proposta precedentemente, e che quindi saranno differenti nel prodotto finale:
+\begin{itemize}
+	\item Ambientazione misteriosa, un bosco, con la luna che traspare tra gli alberi, una strana foschia e tutto caratterizzato da colorazioni scure.
+	\item All’interno dell’ambientazione compare un mago che sta leggendo un giornale, apparentemente nella sua stanza.
+	\item La stanza del mago è in realtà una strana struttura che genera luce da un foro nella parte anteriore ed il fumo del camino visto nell’immagine precedente esce da uno strano comignolo.
+	\item Compare una mano che fa capire che lo strumento non è nient’altro che la lanterna magica. Cambiano perciò le proporzioni di quello che veniva spiegato in precedenza. Il mago è il mezzo che permette alla lanterna magica di funzionare.
+\end{itemize}
+
+La prima implementazione del gioco prevedeva lo sviluppo di 3 livelli, il primo dei quali, con la presenza di un tutorial di movimento e quindi la presentazione delle meccaniche \textit{platform} oltre che di un loro approfondimento. Al termine del livello si sarebbe arrivati quindi per la prima volta all’hub, e da qui la possibilità di proseguire per il secondo livello, oppure controllare i collezionabili raccolti nel primo o provare ad interagire con le lanterne mammut presenti nella scena.
+Questo approccio avrebbe quindi catapultato il giocatore immediatamente nel primo livello. Successivamente abbiamo valutato la possibilità di introdurre una piccola porzione di gioco che avrebbe permesso di presentare il prodotto, prima ancora di conoscere e familiarizzare con le vere meccaniche.
+L’hub è stato quindi esteso, prevedendo l’inclusione di una sezione iniziale, in cui è presente un piccolo tutorial di movimento. Il giocatore arriva quindi, attraverso una tenda da cinema, nell’hub vero e proprio dove, al centro della stanza, viene proiettato il titolo \textit{“The Magic Lantern”}. Da qui è perciò possibile accedere al primo livello e dare inizio alla partita.
+
+\subsection{Analisi dei livelli}
+\label{sec:analisi_livelli}
+
+Il prototipo è strutturato in 3 livelli. Nel primo vengono presentate le meccaniche platform, il secondo è quello in cui si raccoglie la lanterna magica e quindi c’è la presenza del vero \textit{game-changer}, mentre il terzo mostra le vere potenzialità della lanterna magica attraverso un utilizzo più curioso.
+
+Verranno di seguito analizzati i 3 livelli in dettaglio. È importante ricordare che, poiché sono state effettuate due fasi di testing del prodotto, questo ha assunto due forme leggermente diverse. Per il secondo testing infatti, sono state corrette alcune sezioni ed altre sono state accantonate, seppur ritenute di buon valore, per mettere in evidenza solamente gli elementi che abbiamo ritenuto opportuno sottolineare durante il test. Alcune sezioni analizzate in seguito potrebbero essere presenti nella prima versione del prototipo ed essere assenti nella seconda, o viceversa.
+
+\paragraph{Livello 1}
+\label{par:livello1}
+
+Come già detto, il primo livello viene utilizzato con la funzione di tutorial di movimento oltre che di presentazione e padroneggiamento di tutte le meccaniche platform che verranno utilizzate anche nei livelli successivi.
+Nella prima sezione viene insegnata al giocatore la meccanica del salto, tramite un piccolo ostacolo da superare ed un comando visibile a schermo, come mostrato in Figura~\ref{fig:livello1_salto}.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/41_salto.jpg}
+	\caption{Livello 1. Primo salto.}
+	\label{fig:livello1_salto}
+\end{figure}
+
+Successivamente viene testato se il giocatore ha appreso correttamente l’utilizzo della meccanica attraverso dei semplici salti, che mostrano l’utilizzo sia per superare ostacoli in altezza, che per attraversare piattaforme separate tra loro in lunghezza.
+
+A questo punto, considerando i problemi riscontrati da alcuni ragazzi durante il primo test, abbiamo ritenuto necessario inserire anche una piccola sezione in cui insegnare come utilizzare le scale. È quindi presente una scala che permette di raggiungere una piattaforma, con il relativo comando mostrato a schermo.
+
+Successivamente, viene mostrata per la prima volta la meccanica del bottone e della porta, oltre che l’utilizzo intuitivo di una cassa, come si può osservare in Figura~\ref{fig:livello1_bottone}. Il bottone si trova in una zona sottostante alla porta da attraversare. Il giocatore può scendere, premere il bottone e notare la porta che si apre, una volta sceso dal bottone nota la porta chiudersi. La presenza della cassa induce il giocatore a spingerla sul bottone così da mantenerlo premuto. La cassa può quindi essere utilizzata per raggiungere la porta, posta in un posto troppo in alto. Questo semplice puzzle nasconde un intelligente lavoro di Level Design. 
+
+L’utilizzo di un semplice bottone per aprire una porta non avrebbe impresso bene nella mente del giocatore il suo funzionamento, nel modo proposto invece, si è costretti ad un ragionamento che spinge all’utilizzo di uno strumento presente a schermo, la cassa, per raggiungere l’obiettivo prefissato. L’utilizzo della cassa per tornare alla zona più elevata è un rafforzativo della meccanica del salto oltre che un efficiente modo per mostrare il limite massimo raggiungibile in altezza con un salto del personaggio.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.65\columnwidth]{images/gameDesign/42_bottone.jpg}
+	\caption{Livello 1. Primo bottone, accompagnato dalla cassa.}
+	\label{fig:livello1_bottone}
+\end{figure}
+
+Successivamente sono state poste 3 piccole sezioni, mostrate in Figura~\ref{fig:livello1_verifiche_salto} che fungono da rafforzativo della meccanica del salto. 
+
+Nella prima vengono poste 2 piattaforme in obliquo, è necessario quindi valutare le possibilità della meccanica sia per quanto riguarda lo spostamento in altezza, che quello laterale. Sotto le piattaforme sono poste delle punte. È il primo momento in cui il personaggio possa morire. Poco prima delle piattaforme è quindi posto un punto di salvataggio per non far perdere troppo tempo al giocatore. Questa sezione è molto importante perché, mentre risulta fondamentale presentare la nuova meccanica in uno stato di sicurezza per il personaggio, questa va perfezionata aggiungendo progressivamente difficoltà, che stavolta consiste nella possibilità di morire.
+
+Nella breve sezione successiva viene proposto un nuovo salto, simile ai due precedenti, solo che, questa volta la piattaforma è proiettata da una lanterna magica che si accende e si spegne ad intermittenza. Lo scopo è quindi duplice, quello di testare le capacità di reazione e tempismo del giocatore, oltre che di presentare un elemento di gioco curioso, che solo nelle sezioni più avanzate di gioco potrà essere controllato e sfruttato a proprio piacimento.
+
+Nella sezione successiva viene portato al limite il concetto di salto, proponendo una struttura simile a quelle già analizzate, quindi familiari al giocatore, ma stavolta le piattaforme sono molto più strette, richiedono quindi un controllo ed un’attenzione maggiore.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.92\columnwidth]{images/gameDesign/43_verifiche.jpg}
+	\caption{Livello 1. Sezioni di verifica della meccanica del salto.}
+	\label{fig:livello1_verifiche_salto}
+\end{figure}
+
+Il prossimo concetto che si è deciso di spiegare è quello relativo alla presenza delle piattaforme che possono essere attraversate dal basso.
+La successiva sezione, osservabile in Figura~\ref{fig:livello1_piattaforme_blu}, è quindi una semplice pozza caratterizzata, nella parte sinistra da piattaforme blu, la prima delle quali si trova in una posizione più bassa rispetto al limite superiore del personaggio, così che quest’ultimo la attraversi durante il suo normale movimento. Il giocatore è quindi portato a saltare, così da notare che possono essere attraversate dal basso.
+
+La prossima sezione è un rafforzativo dello stesso concetto, presenta una torre costituita da molte piattaforme, le prime sono blu e quindi attraversabili, il giocatore è portato ad affrontarle in maniera quasi automatica, fino ad incontrare una piattaforma verde e quindi solida. È perciò costretto a superarla spostandosi lateralmente dove si può notare la presenza di un’altra piattaforma blu. Il giocatore apprende quindi la possibilità di attraversare un determinato tipo di piattaforma, soprattutto mettendolo in relazione alla prima tipologia che incontra nella partita.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.55\columnwidth]{images/gameDesign/44_blu.jpg}
+	\caption{Livello 1. Prime piattaforme blu.}
+	\label{fig:livello1_piattaforme_blu}
+\end{figure}
+
+Tra le precedenti sezioni ne era presente un’altra, mostrata in Figura~\ref{fig:livello1_puntatore} in cui si insegnava l’utilizzo del puntatore. In questa sezione erano presenti 4 pulsanti da premere in sequenza per aprire una porta. Il giocatore non sapeva la sequenza esatta in cui premere i pulsanti, ma un’immagine lo spingeva ad utilizzare il puntatore per osservare una porzione di schermo normalmente non visibile. In questa era visibile la sequenza di bottoni da premere. In seguito al primo test, osservando una certa difficoltà dei ragazzi nel risolvere il puzzle, abbiamo deciso di eliminare momentaneamente questa sezione, anche perché l’utilizzo del puntatore, soprattutto nel primo livello, è molto limitata. Abbiamo pensato che tale meccanica può essere insegnata in maniera indiretta attraverso l’utilizzo della lanterna magica, che si acquisirà nel secondo livello.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.75\columnwidth]{images/gameDesign/45_mouse.jpg}
+	\caption{Livello 1. Sezione in cui si spiega l'utilizzo del puntatore.}
+	\label{fig:livello1_puntatore}
+\end{figure}
+
+Le prossime sezioni si occupano di far incontrare i nemici per la prima volta nella partita. Il primo nemico che si incontra è della categoria \textit{dumb} (Capitolo \ref{sec:nemici}). Si muove avanti ed indietro in una piccola conca di terreno. Sopra la sua testa è visibile un cartello che indica che può essere ucciso con un salto in testa. È importante spiegare subito al giocatore il modo con cui può affrontare il nemico, così da non farlo trovare spiazzato di fronte ad una meccanica nuova e pericolosa.
+
+La sezione successiva ha la stessa conformazione, così che il giocatore sappia bene come affrontarla. Sopra al nemico è però presente una stella, che costituisce il rafforzativo del salto in testa al nemico per ucciderlo, ed aiuta a comprendere il fatto che il rimbalzo può aiutare a raggiungere posti più elevati. Da notare anche la presenza di una lanterna magica che genera nemici, questo perché, nel caso il giocatore uccida il nemico, deve avere la possibilità di riprovare. Una lanterna magica con questa funzione è stata inserita più volte durante lo sviluppo dei vari livelli.
+
+Nella porzione successiva, vengono continuamente generati nemici che premono ciclicamente un pulsante che permette l’apertura della porta per proseguire con il livello. È utile per permettere al giocatore di comprendere che i bottoni non sono utilizzabili solo dal giocatore, ma anche dai nemici.
+Abbiamo quindi deciso di inserire qui il primo collezionabile contestualizzato (Capitolo~\ref{par_meccanica_lenti}). 
+
+In questa zona si incontra per la prima volta il meccanismo costituito dalle lenti convergenti e divergenti. Il giocatore deve obbligatoriamente attraversare una prima lente, che lo fa ingrandire. A questo punto si incontra il primo personaggio non giocabile del gioco, che spiega al giocatore che è appena passato attraverso una lente e lo invita a testarne altre per provarne gli effetti. L’utilizzo di tale porzione di gioco, visibile in Figura~\ref{fig:livello1_camera_lenti}, non era prevista durante la prima fase di testing. È stata aggiunta per far sì che i ragazzi avessero capito alcuni dei concetti espressi attraverso le schede informative direttamente in gioco. I dettagli riguardo le scelte operate in tale direzione vengono trattati nel capitolo specifico (riferimento).
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.75\columnwidth]{images/gameDesign/46_camera_lenti.jpg}
+	\caption{Livello 1. Camera delle lenti.}
+	\label{fig:livello1_camera_lenti}
+\end{figure}
+
+All’uscita della camera con le lenti, il giocatore si trova ad affrontare una sezione in cui viene rafforzato un concetto già precedentemente espresso, quello del salto sul nemico. È presente una stella ed un cartello che indica al giocatore che può saltare dall’alto sul nemico per raggiungerla. In questo caso, ciò che si vuole far capire al giocatore è la possibilità di raggiungere posti più elevati a seconda dell’altezza da cui inizia la caduta sul nemico.
+Tale meccanica viene richiamata in questo punto soprattutto per particolare natura della prossima sezione.
+
+Come già precedentemente specificato, una delle caratteristiche di un buon \textit{Level Design} è quella di riuscire a proporre aree di gioco con puzzle che richiedono progressivamente uno sforzo maggiore del giocatore, sia dal punto di vista di abilità che di ragionamento. In questa sezione infatti vengono richiamate efficacemente le meccaniche di salto sul nemico e quella delle piattaforme blu. I nemici, generandosi nella parte alta dello schermo, percorrono una serie di piattaforme fino a raggiungere delle punte. Oltre ad essere un ostacolo per il giocatore, che deve riuscire ad evitarli abilmente, devono costituire anche un mezzo per raggiungere la piattaforma superiore. Nel livello più alto è possibile anche osservare una stella, abbastanza facile da raccogliere, semplicemente proseguendo la serie di salti in testa ai nemici.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.6\columnwidth]{images/gameDesign/47_salto_alto.jpg}
+	\caption{Livello 1. Salto sul nemico dall'alto.}
+	\label{fig:livello1_salto_alto}
+\end{figure}
+
+Si è deciso a questo punto di inserire un particolare elemento, studiato appositamente per risolvere dei problemi rilevati durante il primo test, costituito da una grande cornice in cui è possibile osservare alcune immagini (riferimento). Vicino a tale cornice è presente un nuovo personaggio non giocabile che spiega al giocatore come utilizzare questo elemento e permette di sbloccare una particolare scheda informativa a riguardo.
+
+Successivamente viene presentata per la prima volta l’altra tipologia di nemici, quella dei \textit{guard} (Capitolo \ref{sec:nemici}). Ci si assicura quindi di far familiarizzare il giocatore con una sezione non eccessivamente difficile, per poi proporre una zona in cui si utilizza il guard per la sua caratteristica principale, quella di rincorrere il personaggio. È presente un bottone utile ad aprire una porta, ma il personaggio non riesce ad avere abbastanza tempo per raggiungere la porta aperta, deve quindi attrarre il nemico verso il bottone da premere al suo posto. Nella zona successiva, la stessa tipologia di nemico viene utilizzata per ribadire al giocatore la meccanica del salto in testa. 
+
+È quindi presente l’ultima sezione del livello, sono presenti dei Guard su più livelli, il giocatore è costretto a farsi rincorrere per dei corridoi particolarmente lunghi, notando che la velocità di corsa del nemico è superiore alla propria. Il personaggio può salvarsi saltando al livello superiore, facendosi quindi rincorrere nella direzione opposta e proseguire fino all’uscita di questa zona.
+
+All’uscita il giocatore può prendere una decisione, si può chiaramente osservare la porta di uscita dal livello, ma un personaggio non giocabile fa notare la presenza a terra di un oggetto particolare. Quest’oggetto, rappresentazione di una Camera Oscura (Capitolo~\ref{par_meccanica_camera_oscura}), se interagito, permette di sbloccare la relativa scheda informativa, oltre che catapultare il personaggio di nuovo all’inizio della precedente sezione di gioco, ma stavolta a testa in giù. Si tratta di un nuovo collezionabile contestualizzato, in cui abbiamo ipotizzato una meccanica di gioco particolare associabile alle caratteristiche dell’oggetto, che avesse potuto creare curiosità nei giocatori.
+
+\paragraph{Livello 2}
+\label{par:livello2}
+
+Il secondo livello è il primo incentrato sulla meccanica di gioco principale, quella della Lanterna Magica.
+
+Nelle prime sezioni il giocatore viene quindi posto di fronte ad alcune Lanterne, da lui non raccoglibili, che gli mostrano alcuni possibili utilizzi e gli permettono di familiarizzare con la meccanica.
+La prima porzione è caratterizzata da piattaforme a scomparsa, create come proiezioni di Lanterna, il personaggio deve sfruttarle per proseguire. L’ambiente è assolutamente sicuro e privo di pericoli. Successivamente la proiezione permette ad un nemico di raggiungere un pulsante che apre una porta. Il giocatore apprende quindi indirettamente un possibile utilizzo della piattaforma proiettata dalla Lanterna. Successivamente vengono proposte sezioni simili alle prime, ma con delle superfici caratterizzate da punte infilzanti, rendendo quindi i salti del giocatore più difficili.
+
+Il giocatore, proseguendo, viene inghiottito da una trappola nel terreno. Un personaggio non giocabile lo rassicura però, preannunciandogli che la risalita sarà possibile attraverso l’utilizzo della Lanterna Magica, che sarà possibile raccogliere immediatamente (Figura~\ref{fig:livello2_lanterna}). Inizierà quindi una semplice sezione di risalita, in cui il giocatore imparerà ad utilizzare in maniera semplice il suo nuovo strumento. Durante questa fase sarà accompagnato dalle indicazioni del personaggio non giocabile precedentemente incontrato. La sezione successiva sarà invece caratterizzata da nuove punte infilzanti che, per essere superate, richiederanno più attenzione da parte del giocatore.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/48_lanterna.jpg}
+	\caption{Livello 2. Raccoglimento della Lanterna Magica.}
+	\label{fig:livello2_lanterna}
+\end{figure}
+
+Questa verifica nell’utilizzo della Lanterna sarà seguita da due sezioni, visibili in Figura~\ref{fig:livello2_nemici_pulsanti}, in cui il giocatore dovrà usare la Lanterna in maniera simile a quanto visto all’inizio del livello. Dovrà quindi cercare di far attraversare un burrone ad un nemico, così da permettergli la pressione di un pulsante. Nel primo caso sarà un semplice Dumb che proseguirà in maniera autonoma, mentre successivamente l’enigma verrà presentato in maniera simile, ma con un Guard, che dovrà quindi essere attirato verso il bottone. Risulta importante notare come il giocatore, in queste fasi, non è richiesto che il giocatore utilizzi la lanterna in modi molto particolari, ma è sufficiente che ripeta semplici pattern già affrontati all’inizio del livello.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.98\columnwidth]{images/gameDesign/49_piattaforma_nemici.jpg}
+	\caption{Livello 2. Utilizzo della proiezione della piattaforma per spostare nemici.}
+	\label{fig:livello2_nemici_pulsanti}
+\end{figure}
+
+La parte successiva è caratterizzata dall’unico utilizzo della Lanterna non “standard”. È presente un enorme pulsante che, se premuto, fa alzare un macigno di spuntoni che impedisce al giocatore di proseguire. È necessario quindi piazzare una proiezione vicino al macigno, così che, saltandoci sopra, il pulsante non risulti premuto.
+Le due sezioni successive invece, rappresentano degli enigmi in cui utilizzare meccaniche già affrontate, ma poste in maniera leggermente più complessa. Nella prima il giocatore, per poter raccogliere la stella, dovrà utilizzare la proiezione della piattaforma per far premere due bottoni al nemico e quindi aprire due porte differenti. Nella seconda si deve far attraversare un burrone con spuntoni ad un nemico e premere un pulsante per permettergli di raggiungere una sezione altrimenti a lui interdetta. Il nemico andrà quindi a premere il pulsante precedentemente attivato dal giocatore, per permettergli di attraversare una porta e raccogliere la stella.
+
+\paragraph{Livello 3}
+\label{par:livello3}
+
+Il terzo livello sviluppato ha come principio quello di mostrare al giocatore le vere potenzialità della Lanterna Magica attraverso una proiezione con effetti evidenti direttamente sull’ambiente di gioco.
+
+La proiezione utilizzata è quella del vento. La prima parte del livello, osservabile in Figura~\ref{fig:livello3_vento_ambientale}, viene quindi utilizzata per mostrare al giocatore gli effetti del vento ed alcune meccaniche ad esso associate. Si inizia con una breve sezione con degli alberi mossi dal vento, la cui attivazione ad intermittenza è sottolineata da alcuni effetti particellari che mostrano foglie comparire e scomparire o bandiere. Il giocatore può così capire, anche attraverso l’aiuto di un personaggio non giocabile, che può utilizzare il vento per ottenere una spinta di salto maggiore. Viene inoltre mostrato l’effetto sui nemici, il cui movimento viene rallentato o accelerato a seconda della loro direzione di camminata ed alcuni meccanismi, tra cui girandole che permettono di aprire e chiudere porte o tubi che convogliano il vento.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/50_vento.jpg}
+	\caption{Livello 3. Vento ambientale ad inizio del livello.}
+	\label{fig:livello3_vento_ambientale}
+\end{figure}
+
+Nella sezione successiva, si ottiene il vetrino del vento per la Lanterna Magica, che permette di proiettare un’immagine in movimento di \textit{Eolo}, così da generare delle folate con effetti simili a quelli mostrati dal vento esterno.
+Il giocatore è quindi obbligato ad utilizzare il nuovo potere acquisito per superare delle piccole sezioni caratterizzati da salti troppo lungi o troppo alti da poter essere superati normalmente. Questa meccanica viene prima presentata in una situazione sicura, per poi dare la possibilità di padroneggiarla in sezioni leggermente più difficili.
+
+Nelle porzioni successive, il vento deve essere utilizzato per spostare casse e nemici nello scenario. Nella prima, basta semplicemente spingere una cassa sopra un bottone per permettere di proseguire nel livello. Nella seconda è presente anche una stella che, per essere raccolta, richiede uno sforzo ulteriore da parte del giocatore. In quella successiva si devono spingere dei nemici nel piatto di una bilancia per far sì che l’altro piatto, alzandosi, prema un bottone, necessario per aprire una porta e proseguire con il livello.
+
+Le ultime due sezioni del livello, osservabili in Figura~\ref{fig:livello3_vento_proiezione}, servono per mostrare utilizzo molto particolari della proiezione del vento. Nella prima parte vengono spinte delle mongolfiere per raggiungere la cima di una montagna, è presente poi una lunga discesa, alla fine della quale il giocatore deve utilizzare il vento per spingere una barca verso la sponda con la porta d’uscita.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.95\columnwidth]{images/gameDesign/51_vento.jpg}
+	\caption{Livello 3. Utilizzi originali della proiezione del vento.}
+	\label{fig:livello3_vento_proiezione}
+\end{figure}
 
 \section{Serious Game}
 \label{sec:design_serious}
+
+\subsection{Meccaniche di gioco Serious}
+\label{sec:meccaniche_serious}
+
+Tenendo conto le finalità del lavoro di Tesi, la componente Serious del videogioco ricopre una particolare importanza. Abbiamo quindi cercato di non trascurare il design di tutti quegli elementi che avessero costituito un punto di contatto con le tematiche da voler trattare.
+
+Chiaramente gli elementi che, da questo punto di vista, possono avere un impatto maggiore sul giocatore, devono far parte del gameplay stesso del gioco. In questa direzione va l’utilizzo della Lanterna Magica come strumento per cambiare la struttura del mondo di gioco. Il giocatore, attraverso il suo utilizzo, ne carpisce indirettamente la caratteristica principale, quella di proiettare immagini che, al pubblico dell’epoca, sembravano così realistiche, da essere considerate vere (Capitolo~\ref{sec:meccaniche_precinema}).
+
+Altra meccanica che indirettamente richiama concetti relativi alla Lanterna Magica è quella di far apparire e scomparire in dissolvenza alcune sezioni di gioco. La Lanterna aveva la caratteristica di poter essere utilizzata con vari vetrini, che potevano essere cambiati duranti gli spettacoli, garantendo perciò un effetto simile a quello che abbiamo cercato di riprodurre, chiamato tecnicamente, \textit{dissolving views} (Capitolo~\ref{contesto_dissolving_views})
+
+Il gioco, all’inizio dello sviluppo, si poneva come obiettivo quello di proporre al giocatore un grande numero di meccaniche derivate dalle caratteristiche dell’oggettistica tipica del pre-cinema. Tale approccio è stato poi accantonato per garantire chiarezza di gameplay. Alcune meccaniche, che nelle prime fasi di design, erano apparse come ricche di potenziale, sono state comunque riutilizzate in seguito ai risultati ottenuti dal primo test (Capitolo~\ref{par_meccanica_camera_oscura}).
+
+\subsection{Schede informative}
+\label{sec:schede_informative}
+
+\paragraph{Tipologie e sbloccaggio schede.}
+\label{par:tipologie_schede}
+
+Attualmente, seguendo l’idea di design originale ed ispirandoci al lavoro sul videogioco Valiant Hearts, abbiamo deciso di utilizzare due differenti tipologie di schede informative.
+
+Le schede del primo tipo si ottengono raccogliendo oggetti collezionabili direttamente interagendo con essi nello scenario. Le informazioni sbloccate riguardano quindi l’elemento che è possibile osservare, in primo luogo, nella schermata di gioco. 
+
+L’altra tipologia di schede riguarda quelle che abbiamo voluto definire “Curiosità”. Raccolgono infatti degli avvenimenti o dei fatti particolari, che possono o meno essere relazionati ad oggettistica approfondibile attraverso l’altra tipologia di schede. Le curiosità si possono ottenere semplicemente navigando nello scenario di gioco, queste infatti si sbloccano automaticamente con dei \textit{trigger} invisibili, e non richiedono quindi l’intervento diretto del giocatore.
+È importante specificare che, considerando l’evoluzione del design, soprattutto in seguito all’inserimento di elementi contestualizzanti nello scenario di gioco (Capitolo~\ref{par_meccanica_camera_oscura}), non tutte le schede informative vengono ottenute con i due metodi precedentemente analizzati, spesso infatti, queste si sbloccano semplicemente parlando con un personaggio non giocabile che anticipa alcuni aspetti dell’elemento trattato dalla scheda o in seguito all’ingresso in una zona che, attraverso una meccanica di gioco particolare, ne sottolinea le caratteristiche.
+
+\paragraph{Struttura delle schede informative.}
+\label{par:struttura_schede}
+
+Anche per la struttura delle schede informative ci siamo ispirati a quella sviluppata per il videogioco Valiant Hearts (riferimento), un esempio è mostrato in Figura~\ref{fig:scheda_valiant}. Questo contengono una descrizione generale dell’oggetto o del fatto trattato nella parte inferiore dello schermo ed una serie di immagini scorribili nella porzione principale.
+Le descrizioni sono chiaramente pensate e studiate per non essere eccessivamente didascaliche, ma il loro obiettivo è quello di enfatizzare le caratteristiche salienti di ogni elemento, senza risultare troppo noiose, pesanti o ripetitive. Risulta evidente come, anche il lavoro sul testo da inserire nelle schede non è da sottovalutare ed ha richiesto un difficile processo di analisi e di design.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/52_valiant.jpg}
+	\caption{Esempio di scheda informative di Valiant Hearts.}
+	\label{fig:scheda_valiant}
+\end{figure}
+
+In seguito all’analisi dei risultati di alcuni test effettuati, abbiamo ritenuto opportuno proporre una modifica al sistema di fruizione di contenuti proposto da Valiant Hearts.
+
+Le schede informative sviluppate presentano quindi la caratteristica di essere divise in più sottosezioni, ognuna delle quali si occupa di un particolare aspetto del tema trattato. Nella prima porzione questo viene presentato in maniera generale, con terminologia semplice e ponendo l’accento sulle caratteristiche principali. Nelle porzioni successive, a seconda dell’elemento da trattare, vengono affrontate la storia, il funzionamento o fatti ed avvenimenti salienti. Ogni porzione è legata ad un’immagine differente. 
+Questa divisione ci ha permesso di focalizzarci maggiormente sul messaggio principale da voler trasmettere di ogni scheda informativa e dare comunque la possibilità, ad utenti particolarmente interessati, di approfondirne gli aspetti, attraverso la lettura delle sezioni successive alla prima.
+Di seguito viene mostrata un’immagine di una scheda informativa e delle varie sottosezioni.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= \columnwidth]{images/gameDesign/52_schede.jpg}
+	\caption{Esempio di scheda informativa divisa in più sezioni.}
+	\label{fig:scheda_divisa}
+\end{figure}
+
+\subsection{Contestualizzazione di elementi in-game}
+\label{sec:contestualizzazione_elementi}
+
+In seguito all’analisi dei risultati ottenuti dal primo test, abbiamo confermato un’ipotesi già valutata e presa in considerazione durante le fasi di studio dei livelli e delle meccaniche di gioco: la lettura di schede informative non risulta piacevole a tutte le tipologie di videogiocatore.
+L’utente più riflessivo ed analizzatore, ad esempio, non trova fastidioso approfondire aspetti non direttamente collegati all’esperienza di gioco, e tende quindi a fruire di contenuti ed informazioni in maniera più costante.
+Al contrario, il videogiocatore che, per quanto riguarda l’esperienza di gioco, tende a porre l’accento sul gameplay e sulle meccaniche, e preferisce quindi non interrompere la partita per approfondire gli aspetti trattati dalle schede informative.
+
+Per dirigere il prodotto ad un pubblico di videogiocatori più ampio possibile, abbiamo quindi deciso di svolgere delle sessioni di design per capire in che modo e frequenza si sarebbero potuti inserire concetti, altrimenti espressi esclusivamente in forma testuale all’interno delle schede, direttamente nello scenario di gioco.
+
+\paragraph{Meccaniche.}
+
+La prima conseguenza di questa fase è stata quindi quella di riproporre alcune meccaniche già precedentemente analizzate in via teorica, ma non sviluppate per evitare di confondere il giocatore con un numero eccessivo di elementi di gioco.
+Una di queste è quella relativa all’utilizzo di lenti, precedentemente analizzata anche nel Capitolo~\ref{par_meccanica_lenti}. Nella scheda informativa si analizzano le tipologie di lenti divergenti e convergenti, mostrando le loro capacità di mostrare gli oggetti in maniera ingrandita o rimpicciolita.
+La meccanica sviluppata quindi, permette al personaggio di cambiare la propria scala con il passaggio attraverso una delle lenti. È stata sviluppata una particolare sezione di gioco in cui l’utente deve riuscire a sfruttare i cambiamenti di scala per attraversare passaggi troppo stretti o per superare salti troppo grandi.
+Le lenti sono bidirezionali, ma, attraverso un’attenta fase di Level Design, siamo riusciti a fare in modo che l’utente non le sfrutti mai due volte consecutivamente, così da evitare infiniti ingrandimenti o rimpicciolimenti del personaggio.
+La porzione di scenario che sfrutta la meccanica delle lenti può essere osservata in Figura~\ref{fig:livello1_camera_lenti}.
+
+All’ingresso il giocatore si trova ingrandito da una lente convergente. Qui parla con un personaggio non giocabile (riferimento) che gli spiega cosa gli è appena successo. Il giocatore può quindi decidere di salire la serie di piattaforme blu, ma risulta essere troppo grande per spingere la cassa. Attraversa quindi la lente divergente, così da ritrovarsi di nuovo a grandezza naturale. Ripercorrendo lo stesso percorso riesce quindi a spingere la cassa sul pulsante ed aprire la porta di uscita dalla zona. Ma il nuovo passaggio attraverso la lente divergente lo porta ad assumere la grandezza minima che gli impedisce di raggiungere la seconda piattaforma. È quindi costretto ad affrontare uno stretto passaggio che lo conduce ad una nuova lente convergente che, riportando la sua dimensione a quella standard, gli garantisce la possibilità di raggiungere l’uscita.
+
+La sezione è sovrastata da un corridoio in cui il giocatore vede dei nemici che, subendo l’effetto delle lenti, cambiano la loro dimensione. Può perciò, in maniera indiretta, comprendere il meccanismo delle lenti ed applicarlo, senza la necessità di consultare l’approfondimento fornito dalle schede informative.
+
+La camera oscura è un altro oggetto che ci ha permesso di sviluppare una particolare tipologia di meccanica di gioco. È caratterizzata dall’essere una scatola con un foro stenopeico che lascia entrare la luce, la quale proietta, sulla faccia interna opposta l’immagine capovolta di quello che si trova di fronte al foro. Un approfondimento può essere trovato nel Capitolo~\ref{contesto_camera_oscura}.
+
+Abbiamo quindi sviluppato una particolare sezione di gioco caratterizzata dall’essere proposta al giocatore con la visuale verticalmente invertita, questo è quindi indotto a comprendere la caratteristica principale della camera oscura attraverso una meccanica che si distingue dal resto degli elementi fino a questo punto proposti.
+Alla fine del primo livello, il giocatore si trova ad affrontare una sezione in cui viene inseguito dai nemici di tipo \textit{guard} (Capitolo~\ref{guard}) ed è costretto ad evitarli salendo alla piattaforma superiore, dove è di nuovo inseguito, fino a raggiungere l’uscita della zona. Nel segmento di gioco successivo, si incontra un personaggio non giocabile che ci anticipa la meccanica della camera oscura, che è invece presente subito dopo, sotto forma di oggetto collezionabile.
+All’interazione con la camera oscura, parte una breve animazione che mostra il player entrare al suo interno. Ci si ritrova quindi all’inizio della precedente sezione, ma con la visuale verticalmente invertita. Il giocatore deve quindi riaffrontare l’inseguimento dei guard, con il livello di difficoltà aumentato dalla particolare inquadratura. All’interno di questa porzione è inoltre possibile raccogliere una stella, che, per essere raggiunta, richiede il superamento di una piccola sezione platform.
+All’uscita dalla zona, il personaggio esce dalla camera oscura e l’inquadratura torna normale.
+La sezione può essere in parte osservata in Figura~\ref{fig:meccaniche_precinema_camera_oscura}.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.8\columnwidth]{images/gameDesign/53_NPC.jpg}
+	\caption{Esempio di personaggio non giocabile che pone una domanda al giocatore.}
+	\label{fig:serious_NPC}
+\end{figure}
+
+\paragraph{Personaggi non giocabili.}
+\label{NPC}
+Un altro elemento che abbiamo inserito per aggiungere nozioni, altrimenti esclusive delle schede informative, anche in game, sono i personaggi non giocabili o \textit{NPC (Non Playable Character)}.
+Questi, una volta che il giocatore entra nel loro \textit{trigger} di competenza, bloccano i movimenti e spostano la camera nel punto tra il nuovo personaggio ed il player. A questo punto parte un dialogo, pensato appunto per comunicare contenuti al giocatore, in maniera simpatica ed intuitiva.
+Vengono quindi utilizzati in primo luogo per spiegare al giocatore come aprire le schede informative, successivamente vengono posti in prossimità dei luoghi in cui queste vengono sbloccate, così da anticipare al giocatore gli argomenti che può approfondire attraverso la lettura delle schede.
+
+L’utilizzo di \textit{NPC} è stato esteso anche ad una nuova meccanica che abbiamo deciso di inserire, quella di questionari in-game, osservabili in Figura~\ref{fig:serious_NPC}.
+Il personaggio non giocabile, durante il dialogo, può porre una domanda al giocatore e, se quest’ultimo dovesse rispondere correttamente, offre la possibilità di raccogliere una stella, precedentemente posta dietro una porta non apribile o nascosta da una sezione non visibile.
+Il personaggio suggerisce al giocatore di aprire la relativa scheda informativa nel caso non sia immediatamente capace di rispondere correttamente.
+Se il giocatore dovesse fornire una risposta sbagliata alla domanda, che viene presentata senza giochi di parole o tecnicismi in grado di causare fraintendimenti, sarebbe costretto a riaffrontare tutto il livello per provare una risposta differente ed ottenere la ricompensa.
+Nell’attuale implementazione, per lo sviluppo ed il \textit{testing} del prototipo del prodotto finale, questa limitazione non esiste, il giocatore può quindi tentare differenti risposte fino a selezionare quella corretta. L’approccio \textit{trial and error} è in parte limitato dal porre le risposte in ordine casuale, così da evitare comportamenti automatici del giocatore.
+Abbiamo preso questa decisione perché può essere utile raccogliere dati in relazione al numero di tentativi medi per fornire la risposta corretta.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/54_corniciona.jpg}
+	\caption{Esempio di cornice con immagine di scheda informativa.}
+	\label{fig:serious_corniciona}
+\end{figure}
+
+Un’altra tecnica che abbiamo studiato, per fornire contenuti in-game, è stata quella di inserire delle enormi cornici, visibili in Figura~\ref{fig:serious_corniciona} in ampie sezioni di gioco, che mostrano delle immagini presenti nelle schede informative. Tali cornici simulano esteticamente una zona di un museo, presentando nella parte inferiore, anche una targhetta con il titolo del contenuto mostrato.
+Alcune di queste cornici presentano anche un bottone, nella parte bassa, che permette al giocatore di cambiare l’immagine mostrata.
+Durante l’avvicinarsi a questa sezione, un \textit{trigger} fa sì che la camera non segua più il giocatore, ma tenda ad inquadrare la cornice, così da mostrarla interamente a schermo ed essere pienamente visibile al giocatore.
+In genere queste sezioni presentano un ulteriore \textit{trigger}, nel punto immediatamente successivo al bottone, che permette di sbloccare la scheda informativa.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/55_caricamenti.jpg}
+	\caption{Esempio di caricamento con informazioni.}
+	\label{fig:serious_caricamenti}
+\end{figure}
+
+Come ultimo elemento abbiamo inoltre aggiunto, durante le fasi di caricamento tra un livello e l’altro, le immagini delle schede informative come sfondo alla barra di caricamento, mostrate in Figura~\ref{fig:serious_caricamenti}.
+È tutt’ora in fase di valutazione la possibilità di aggiungere, nel prodotto finale, una navigazione più completa della scheda informativa durante le schermate di caricamento, che permetta perciò di scorrere le immagini e leggere il testo.
+
+
+
 
 \section{Interfaccia}
 \label{sec:design_interfaccia}
