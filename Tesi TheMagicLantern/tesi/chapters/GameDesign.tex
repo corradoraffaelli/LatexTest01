@@ -1035,8 +1035,64 @@ In genere queste sezioni presentano un ulteriore \textit{trigger}, nel punto imm
 Come ultimo elemento abbiamo inoltre aggiunto, durante le fasi di caricamento tra un livello e l’altro, le immagini delle schede informative come sfondo alla barra di caricamento, mostrate in Figura~\ref{fig:serious_caricamenti}.
 È tutt’ora in fase di valutazione la possibilità di aggiungere, nel prodotto finale, una navigazione più completa della scheda informativa durante le schermate di caricamento, che permetta perciò di scorrere le immagini e leggere il testo.
 
-
-
-
 \section{Interfaccia}
 \label{sec:design_interfaccia}
+
+Per quanto riguarda l’interfaccia in-game, si è scelto di renderla il più possibile minimale, cercando di occupare solo una piccola parte di schermo per non invadere spazio utile allo scenario, che, come si è già specificato, trattandosi di un’avventura con una forte componente esperienziale, risulta molto importante per l’impronta di gioco.
+
+La meccanica di gioco primaria è quella di utilizzo della Lanterna Magica che, in base al vetrino equipaggiato, permette di modificare il mondo a proprio piacimento. Per lo sviluppo del prototipo, come evidenziato dall’analisi precedentemente proposta (Capitolo~\ref{sec:analisi_livelli}) si è deciso di utilizzare un solo vetrino per ogni livello di gioco, in modo da poter garantire al giocatore la possibilità di assaggiare le potenzialità della Lanterna Magica senza creare confusione per quanto riguarda le meccaniche da poter usare.
+Il prodotto finale invece dovrà essere caratterizzato dalla possibilità di equipaggiare la Lanterna con differenti vetrini e poterli scegliere a seconda delle necessità. Questo garantisce un \textit{Level Design} più ricco e più interessante.
+Un elemento di interfaccia fondamentale è quindi quello che permette al giocatore di sapere il vetrino che è attualmente equipaggiato.
+Nella porzione di schermo in basso a destra quindi, forniamo questa informazione al giocatore, accompagnandola dal tasto da premere per cambiare vetrino, nel caso se ne possegga un numero uguale o superiore a due.
+
+La componente Serious del gioco è costituita, in gran parte, anche dalle schede informative da poter sbloccare e leggere in qualsiasi momento durante la partita. Nell’istante in cui se ne sblocca una, viene momentaneamente mostrato a schermo il comando da premere per poterla leggere. Abbiamo comunque ritenuto necessario ricordare al giocatore il modo di poter accedere al menu delle schede in qualsiasi momento.  Nella porzione di schermo in alto a destra, quindi, viene mostrata l’immagine di un libro con, a fianco, il comando da premere. Questa immagine non viene mostrata se ancora non è stato sbloccato alcun contenuto nel livello.
+
+In Figura~\ref{fig:interfaccia_ingame} è possibile osservare i due elementi di interfaccia appena trattati.
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/56_interfaccia.png}
+	\caption{Interfaccia del vetrino e del comando per le schede informative.}
+	\label{fig:interfaccia_ingame}
+\end{figure}
+
+Oltre all’interfaccia sempre presente a schermo, abbiamo inserito anche degli elementi a scomparsa.
+
+È stato già citato il comando a schermo per aprire le schede informative, una volta sbloccato un nuovo contenuto. Questo viene mostrato nella parte centrale dello schermo, insieme ad una pagina di un libro. Il comando pulsa per qualche secondo, e si va quindi a sovrapporre al libro.
+Nel gioco, come già descritto, esistono due tipologie di contenuti sbloccati, quella relativa ad oggettistica e quella che si occupa delle curiosità. Precedentemente, il comando da premere per aprire le schede informative, veniva mostrato esclusivamente nel momento in cui si sbloccava il contenuto relativo ad una curiosità, mentre il comando pulsante era relegato all’angolo in alto a destra. In seguito al primo testing effettuato, si è notato come le schede informative delle curiosità sono state aperte con una percentuale molto maggiore. Abbiamo quindi deciso di unificare le due interfacce, utilizzando e migliorando quella che è risultata più efficace.
+Sia che venga raccolto un oggetto o che venga sbloccata una curiosità, semplicemente tramite trigger, abbiamo quindi usato la medesima interfaccia, mostrata in Figura~\ref{fig:interfaccia_oggetti}.
+
+Mentre i contenuti delle curiosità vengono raccolti automaticamente dal giocatore durante l’avanzamento nei livelli, quelli relativi all’oggettistica possono essere evitati. Abbiamo quindi ritenuto utile mostrare al giocatore il contenuto sbloccato in relazione alla loro totalità. Nella parte destra dello schermo quindi, quando si raccoglie un oggetto, compare una barra laterale che mostra cosa sia stato appena sbloccato.
+Parallelamente, al centro dello schermo, si ingrandisce un’immagine dell’oggetto che va poi a posizionarsi nella relativa posizione della barra laterale.
+Tale interfaccia è stata estesa anche all’ottenimento delle stelle. Quindi, quando se ne raccoglie una, viene mostrata una barra laterale a sinistra, che mostra tutte le stelle del livello, ed al centro dello schermo compare l’immagine di una stella che si va a posizionare nella relativa posizione.
+
+
+\begin{figure}%[h]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/57_interfaccia.jpg}
+	\caption{Interfaccia del raccoglimento di un oggetto con: pagina e comando da premere in alto al centro, oggetto raccolto al centro, barra laterale con tutti gli oggetti a destra.}
+	\label{fig:interfaccia_oggetti}
+\end{figure}
+
+Tali informazioni possono aiutare soprattutto per la componente di rigiocabilità. Il giocatore, osservando quali elementi non ha raccolto all’interno di un livello, può decidere di rigiocarlo e completarlo.
+Abbiamo inoltre dato la possibilità al giocatore di poter controllare in ogni momento le barre laterali, semplicemente aprendo il menu principale di gioco.
+Questi elementi sono anche presenti nell’hub centrale, ogni volta che il personaggio transita di fronte ad una porta d’ingresso di un livello, così da controllarne la percentuale di completamento.
+
+È possibile osservare l'interfaccia dell'oggetto raccolto e della relativa barra laterale in Figura~\ref{fig:interfaccia_oggetti}.
+
+Il design dell’interfaccia delle schede informative è risultato cruciale per lo sviluppo di un prodotto di buona qualità, in quanto ricoprono una grande importanza per il gioco creato, viste le sue finalità.
+Per la struttura ci siamo ampliamente ispirati al modello fornito dal videogioco Valiant Hearts (riferimento), già trattato nel Capitolo~\ref{par:struttura_schede}, poiché utilizza una metodologia di ottenimento dei contenuti molto simile a quella sviluppata.
+La soluzione proposta è mostrata in Figura~\ref{fig:interfaccia_schede}.
+
+\begin{figure}%[t]
+	\centering
+	\includegraphics[width= 0.9\columnwidth]{images/gameDesign/58_interfaccia.jpg}
+	\caption{Interfaccia delle schede informative. Con comandi visibili a schermo.}
+	\label{fig:interfaccia_schede}
+\end{figure}
+
+Vengono quindi mostrati sulla sinistra gli elementi che dispongono di un contenuto. Quelli già sbloccati hanno la loro immagine completa, mentre quelli che devono ancora essere ottenuti mostrano esclusivamente la loro sagoma. Nella porzione destra di schermo vengono invece mostrate le immagini ed il relativo testo nella parte inferiore. Si è scelto di dare la possibilità di navigare attraverso i vari elementi utilizzando l’asse verticale (i tasti W ed S per la tastiera e le frecce direzionali o la leva analogica sinistra, mossi dall’alto al basso, o viceversa, per il controller) e di selezionare la sottosezione con l’asse orizzontale (i tasti A e D della tastiera e le frecce direzionali o la leva analogica sinistra, mossi da destra a sinistra, o viceversa, per il controller). Viene inoltre data la possibilità di scorrere tra oggettistica e curiosità dei vari livelli, attraverso l’utilizzo del tasto TAB con la tastiera, tramite click del mouse su appositi bottoni o con i tasti dorsali del caso di utilizzo del controller. Anche questa configurazione è ispirata alla fruizione delle schede in Valiant Hearts, con, in aggiunta, la possibilità di scorrere le sottosezioni di ogni elemento.
+Inoltre, si è deciso di fare in modo che, il contenuto consultabile al momento dell’apertura delle schede informative, risulti quello relativo all’ultimo elemento sbloccato, così da non frustrare il giocatore con lunghe ricerche attraverso il menu.
+
+
+
