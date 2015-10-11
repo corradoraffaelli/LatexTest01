@@ -27,8 +27,13 @@ In entrambi i test, il pubblico si è mostrato molto entusiasta e collaborativo,
 
 \newpage
 
+%--------------
+%--------------
+
 \subsection{Prima sessione di testing}
 
+%--------------
+%--------------
 \subsubsection{Esito questionari}
 
 La prima sessione di testing, come già detto, si è svolta presso un oratorio Salesiano verso fine Luglio 2015. Prima di effettuare questo testing, sono stati svolti vari test interni, i quali avevano come pubblico colleghi di e-Mentor e altri conoscenti vari, tutto ciò allo scopo di avere dei pareri super partes sul primissimo prototipo del gioco, il quale era stato visto soltanto dagli sviluppatori, fino a quel momento. 
@@ -72,10 +77,12 @@ Nota bene: le domande fornite nei questionari sono state poste in modo più chia
 In base alle risposte discusse poco sopra, si è quindi evinto che il gioco è stato recepito molto bene dal pubblico, il quale si è divertito molto, ma il livello di difficoltà globale e l'immediatezza di tutorial ed interfacce di gioco, sono da rivedere. Inoltre, la fruizione dei contenuti informativi non è avvenuta nel migliore dei modi.
 Si pensa inoltre, che la difficoltà avuta dai giocatori, nel muoversi all'interno del gioco, sia dovuta ai comandi a loro non particolarmente familiari, come la configurazione mouse e tastiera (che prevede l'uso dei tasti wasd).
 
+%--------------
+
 \subsubsection{Esito analisi oggettive}
 
 Come spiegato nella sezione sulle modalità di testing, sono stati implementati ed usati degli strumenti ad hoc per analizzare oggettivamente il comportamento dei giocatori.
-Queste analisi oggettive prevedono lo studio su:
+Queste analisi oggettive prevedono lo studio riguardo:
 
 \begin{itemize}
 
@@ -92,7 +99,7 @@ E' visibile in \myfig{\ref{fig:test_analisi_tempi_01}}  il grafico che mostra su
 
 \begin{itemize}
 
-\item Medie reali (blu): sono i tempi mediati dei giocatori, quindi dei tempi reali;
+\item Medie reali (blu): sono i tempi mediati dei giocatori del test, quindi dei tempi reali;
 \item Tempi ideali (*) (rosso): sono i tempi di gioco previsti per un giocatore esperto, cioè il tempo minimo che occorre spendere per quella sezione di gioco al fine di superare eventuali puzzle e raccogliere eventuali collezionabili;
 \item Tempi previsti (**) (arancione): sono i tempi previsti, e diversamente da quelli ideali, tengono conto delle possibili difficoltà che un utente medio può avere, e quindi dei relativi tempi aggiuntivi.
 
@@ -120,7 +127,7 @@ Il secondo livello, il cui grafico è mostrato in \myfig{\ref{fig:test_analisi_t
 
 In due sezioni invece, ``Puzzle con dumb'' e ``Doppio ponte'' i tempi previsti sono risultati essere più bassi rispetto a quelli reali, questo è dovuto al fatto che i giocatori si sono spesso disinteressati del raccoglimento dei collezionabili di queste due sezioni, semplicemente proseguendo il livello.
 
-Riguardo il terzo livello, è possibile vedere dalla  \myfig{\ref{fig:test_analisi_tempi_03}} che anche qui sono state solo 2 le sezioni i cui tempi previsti sono stati molto più bassi di quelli reali: ``Puzzle con bilancia'' e ``Mongolfiere''. Mentre un la sezione ``Puzzle porta'' ha avuto un tempo reale inferiore a quello ideale addirittura, sintomo del fatto che il rompicapo in questione è stato quasi totalmente ignorato dai giocatori.
+Riguardo il terzo livello, è possibile vedere dalla  \myfig{\ref{fig:test_analisi_tempi_03}} che anche qui sono state solo 2 le sezioni i cui tempi previsti sono stati molto più bassi di quelli reali: ``Puzzle con bilancia'' e ``Mongolfiere''. Invece la sezione ``Puzzle porta'' ha avuto un tempo reale inferiore a quello ideale addirittura, sintomo del fatto che il rompicapo in questione è stato quasi totalmente ignorato dai giocatori.
 
 \begin{figure}[h]
 \centerline{\includegraphics[scale=0.45]{images/risultati/test_01_analisi_tempi_03.png}}
@@ -130,25 +137,28 @@ Riguardo il terzo livello, è possibile vedere dalla  \myfig{\ref{fig:test_anali
 
 Altri dati al di sotto delle aspettative sono stati: i tempi di lettura dei contenuti informativi e le percentuali di raccoglimento dei collezionabili opzionali. 
 
-La percentuale di ragazzi che si sono fermati a leggere i contenuti sbloccati è risultata essere bassa, ed i pochi ragazzi che hanno dedicato del tempo a questi contenuti, lo hanno fatto con un tipo in particolare (``Fan Facts'', piuttosto che ``Oggetti''). Vedremo un'analisi più approfondita di questi dati per il secondo test.
+La percentuale di ragazzi che si sono fermati a leggere i contenuti sbloccati è risultata essere bassa, ed i pochi ragazzi che hanno dedicato del tempo a questi contenuti, lo hanno fatto con un tipo in particolare di contenuto definito ``Fan Facts'', mentre l'altra tipologia, chiamata ``Oggetti'', è stata spesso ignorata. Vedremo un'analisi più approfondita di questi dati per il secondo test.
 
 Per quanto riguarda i collezionabili raccolti, le percentuali di raccoglimento in generale è molto bassa, poco più dell'11\%. Questo fatto è dovuto probabilmente alla poca dimestichezza dei giocatori con la configurazione mouse e tastiera, in quanto, in buona parte dei casi, per prendere questi oggetti opzionali, è fondamentale avere un buon tempismo con i comandi di gioco. Vedremo un confronto sulle statistiche dei collezionabili fra il primo ed il secondo test durante l'analisi di quest'ultimo.
 
 \newpage
 
+%--------------
+%--------------
+
 \subsection{Revisione del design}
 \label{revisione}
 Considerati i feedback raccolti durante la prima sessione di testing, è stato ritenuto opportuno spendere del tempo per fare una revisione del design di alcune parti di gioco.
-Buona parte del contenuto di questa revisione è già stato trattato nel capitolo del design ********, qui semplicemente vedremo di contestualizzare meglio il tutto.
+Buona parte del contenuto di questa revisione è già stato trattato nel Capitolo \ref{chap:game_design} sul game design, qui semplicemente vedremo di contestualizzare meglio il tutto.
 
 Vediamo quindi i punti di revisione:
 
 \begin{itemize}
 
-\item Level Design: innanzitutto è stato modificato il level design di alcune sezioni di gioco, in particolare del primo livello, dove la curva di difficoltà era troppo ripida per essere il primo livello della demo. Sono state quindi tagliate alcune parti, il cui obiettivo era rafforzare i tutorial di salto e coordinazione.
-\item NPC e quiz : si è scelto di includere degli NPC (Non Playable Character) al fine di catalizzare alcuni tutorial e la fruizione dei contenuti informativi, tramite per esempio alcuni quiz che premiano il giocatore con dei collezionabili opzionali.
-\item Tutorial Lanterna: è stato rivisto l'introduzione e il tutorial alla lanterna.
-\item Nuove meccaniche di gioco: sono state aggiunte al gioco nuove meccaniche come metafore di alcuni contenuti informativi, come per esempio le sezioni dedicate alle lenti e alla camera oscura, dove il giocatore è soggetto a delle regole che richiamino i meccanismi degli oggetti di interesse. Per esempio, nella sezione con le lenti, il giocatore può ingrandirsi o rimpicciolirsi, a seconda della lente attraverso cui passa.
+\item Level Design: innanzitutto è stato modificato il level design di alcune sezioni di gioco, in particolare del primo livello, dove la curva di difficoltà era troppo ripida per essere il primo livello della demo. Sono state quindi tagliate alcune parti, il cui obiettivo originale era quello di rafforzare i tutorial di salto e coordinazione, fallendo nella maggior parte dei casi, e causando solo stress nel giocatore impreparato a tali ostacoli dopo solo qualche minuto di gioco.
+\item NPC e quiz : si è scelto di includere degli NPC (Non Playable Character) al fine di catalizzare alcuni tutorial e la fruizione dei contenuti informativi, tramite, per esempio, alcuni quiz che premiano il giocatore con dei collezionabili opzionali.
+\item Tutorial Lanterna: è stata rivista l'introduzione della Lanterna Magica, dando ad essa molta più enfasi, ed è stato rifatto anche il tutorial successivo che ne spiega l'uso.
+\item Nuove meccaniche di gioco: sono state aggiunte al gioco nuove meccaniche di gioco tramite metafore di alcuni contenuti informativi, come per esempio le sezioni dedicate alle lenti e alla camera oscura, dove il giocatore è soggetto a delle regole che richiamino i meccanismi degli oggetti di interesse. Per esempio, nella sezione con le lenti, il giocatore può ingrandirsi o rimpicciolirsi, a seconda della lente attraverso cui passa.
 \item Immagini contenuti Serious in game: si è pensato di attrarre l'attenzione del giocatore verso i contenuti informativi, mostrando questi in alcune sezioni di gioco tramite delle cornici giganti (come si vede in \myfig{\ref{fig:cornice_serious}}).
 \item Supporto al controller: è stato supportato al 100\% l'uso del controller, così da agevolare quei giocatori meno abituati a mouse e tastiera.
 \item Feedback contenuti sbloccati: poiché durante il primo test, le schede informative più lette sono risultate essere quelle della categoria ``Fun Facts'', si è pensato di uniformare il feedback visivo riguardo lo sblocco di tutti i contenuti, estendendo la grafica dei ``Fun Facts'' anche alle altre tipologie di schede informative.
@@ -163,7 +173,12 @@ Vediamo quindi i punti di revisione:
 
 Nonostante il poco tempo a disposizione, circa 4 settimane, sono stati applicati i cambiamenti elencati. Si era ipotizzato di effettuare anche altri cambiamenti, ma le altre idee sono state accantonate e conservate per gli sviluppi futuri.
 
+%--------------
+%--------------
+
 \subsection{Seconda sessione di testing}
+
+%--------------
 
 \subsubsection{Esito questionari}
 
@@ -200,7 +215,7 @@ Vediamo ora, in base ai risultati mostrati in \myfig{\ref{fig:test-questionario0
 
 \end{itemize}
 
-I fatti che possiamo dedurre da questa analisi riguardano in primo luogo i miglioramenti ai punti più critici del primo test. Come possiamo vedere tramite la \myfig{\ref{fig:test-confronto}}, 5 punti critici sono stati notevolmente migliorati.
+I fatti che possiamo dedurre da questa analisi riguardano in primo luogo i miglioramenti ai punti più critici del primo test. Come possiamo vedere tramite la \myfig{\ref{fig:test-confronto}}, cinque punti critici sono stati notevolmente migliorati.
 
 \begin{figure}[h]
 \centerline{\includegraphics[scale=0.55]{images/risultati/test-confronto.png}}
@@ -210,10 +225,10 @@ I fatti che possiamo dedurre da questa analisi riguardano in primo luogo i migli
 
 \subsubsection{Esito analisi oggettive}
 
-Il miglioramento della giocabilità della demo è stato confermato anche dalla lettura delle analisi oggettive, per esempio, facendo un confronto fra i grafici del livello uno di primo e secondo test (vedi \myfig{\ref{fig:test-confronto-tempi1}}) possiamo notare che nel grafico del secondo test, l'andamento dei tempi reali segue abbastanza bene quello dei tempi previsti, cosa non sempre vera nel grafico del primo test, dove sono presenti dei picchi della funzione blu (tempi reali) che si discostano parecchio dai relativi punti della funzione arancione (tempi previsti).
+Il miglioramento della giocabilità della demo è stato confermato anche dalla lettura delle analisi oggettive, difatti, facendo un confronto fra i grafici del livello uno di primo e secondo test (vedi \myfig{\ref{fig:test-confronto-tempi1}}) possiamo notare che nel grafico del secondo test, l'andamento dei tempi reali segue abbastanza bene quello dei tempi previsti, cosa non sempre vera nel grafico del primo test, dove sono presenti dei picchi della funzione blu (tempi reali) che si discostano parecchio dai relativi punti della funzione arancione (tempi previsti).
 
 \begin{figure}[h]
-\centerline{\includegraphics[scale=0.35]{images/risultati/test-confronto-tempi1.png}}
+\centerline{\includegraphics[scale=0.3]{images/risultati/test-confronto-tempi1.png}}
 \caption{Confronto dei risultati fra primo e secondo test del livello 1.}
 \label{fig:test-confronto-tempi1}
 \end{figure}
@@ -221,17 +236,17 @@ Il miglioramento della giocabilità della demo è stato confermato anche dalla l
 Il miglioramento è presente anche per il secondo e terzo livello, come è possibile notare dalla \myfig{\ref{fig:test-confronto-tempi2-3}} (sulla sinistra sono presenti i grafici del primo test, mentre sulla destra quelli del secondo).
 
 \begin{figure}[h]
-\centerline{\includegraphics[scale=0.35]{images/risultati/test-confronto-tempi2-3.png}}
+\centerline{\includegraphics[scale=0.3]{images/risultati/test-confronto-tempi2-3.png}}
 \caption{Confronto dei risultati fra primo e secondo test dei livelli 2 e 3.}
 \label{fig:test-confronto-tempi2-3}
 \end{figure}
 
 Per quanto riguarda l'analisi dei dati sulla fruizione dei contenuti informativi, durante il primo test la percentuale di persone interessate alle varie schede è stata mediamente del 6\% riguardo gli oggetti, e del 30\% riguardo i ``Fun Facts'', quindi statistiche davvero molto basse. Questa volta invece sono stati registrati dei dati molto interessanti e positivi.
 
-Vediamo per esempio le percentuali di giocatori interessanti alle varie schede informative, e i tempi medi di lettura dedicati ( \myfig{\ref{fig:test-percTempiSchede}}).
+Vediamo per esempio le percentuali di giocatori interessanti alle varie schede informative, e i tempi medi di lettura dedicati (vedi \myfig{\ref{fig:test-percTempiSchede}}).
 
 \begin{figure}[h]
-\centerline{\includegraphics[scale=0.4]{images/risultati/test_seriousStats.png}}
+\centerline{\includegraphics[scale=0.35]{images/risultati/test_seriousStats.png}}
 \caption{Grafici riguardo le percentuali dei giocatori che hanno letto che schede informative, e il tempo medio dedicato per scheda.}
 \label{fig:test-percTempiSchede}
 \end{figure}
@@ -240,7 +255,7 @@ Nota bene: è stata fatta una scelta arbitraria per definire quale fosse un gioc
 
 Possiamo notare che le percentuali sono tutte piuttosto alte, con picchi delle schede ``Lenti'' e ``Lanterna sbagliata''. La scheda sulle lenti è la prima del gioco, il fatto che quasi tutti l'abbiano aperta è un buon segno che conferma la chiarezza dell'interfaccia di gioco riguardo lo sblocco e la lettura delle schede informative. Le conclusioni possibili riguardo queste analisi sono quasi tutte arbitrarie, in quanto non è possibile avere completa certezza sul fatto che i giocatori durante il tempo per il quale hanno avuto la scheda informativa aperta, la stavano davvero leggendo.
 
-Difatti, per capire se un giocatore abbia appreso o meno qualcosa riguardo il pre-cinema, sono stati posti dei quiz, uno per livello, dove si ponevano semplici domande, a risposta multipla, al giocatore. Giudicando i giocatori preparati quelli che hanno indovinato la risposta al primo colpo, queste sono le statistiche estratte dai dati:
+Difatti, per capire se un giocatore abbia appreso o meno qualcosa riguardo il pre-cinema, si è tentato di farlo tramite l'aggiunta di appositi quiz, uno per livello, nei quali si ponevano al giocatore semplici domande, a risposta multipla. Giudicando come preparati i giocatori che hanno indovinato la risposta al primo colpo, le statistiche estratte dai dati sono visibili in \myfig{\ref{fig:test-quiz}}.
 
 \begin{figure}[h]
 \centerline{\includegraphics[scale=0.65]{images/risultati/test-quiz.png}}
@@ -248,20 +263,20 @@ Difatti, per capire se un giocatore abbia appreso o meno qualcosa riguardo il pr
 \label{fig:test-quiz}
 \end{figure}
 
-Anche queste statistiche non possono essere precise al 100\%, in quanto, un giocatore potrebbe aver scelto a caso ed indovinato al primo colpo.
+Anche queste statistiche non possono essere precise al 100\%, in quanto, un giocatore potrebbe aver scelto a caso la risposta ed indovinato al primo colpo.
 
-Un ultima cosa, degna di nota di questa analisi, è la percentuale di interessamento alla scheda informativa della Lanterna Magica, per la quale, ``solo'' il 63\% dei tester si è interessato, nonostante siano le informazioni potenzialmente più esplicative del gioco. Questo fatto può essere dovuto alla posizione non proprio comoda dove si sblocca il contenuto. In questo punto del gioco, il player ha appena superato il tutorial della Lanterna, e sta per usare nuovamente questa per superare una sezione puzzle-platform. Probabilmente, a questo punto, l'attenzione del player è rivolta totalmente verso la parte di livello da superare, al punto da ignorare la scheda appena sbloccata.
+Un fatto degno di nota di questa analisi, è la percentuale di interessamento alla scheda informativa della Lanterna Magica, per la quale, ``solo'' il 63\% dei tester si è interessato, nonostante siano le informazioni potenzialmente più esplicative del gioco. Questo fatto può essere dovuto alla posizione non proprio comoda dove si sblocca il contenuto. In questo punto del gioco, il player ha appena superato il tutorial della Lanterna, e sta per usare nuovamente questa per superare una sezione puzzle-platform. Probabilmente, a questo punto, l'attenzione del player è rivolta totalmente verso la parte di livello da superare, al punto da ignorare la scheda appena sbloccata.
 
-Un dato interessante riguardo le modalità di lettura delle schede informative, è il momento in cui il giocatore accede alle informazioni. Nonostante sia possibile accedere ai contenuti sbloccati anche in un secondo momento, la maggior parte dei tester che ha aperto le schede informative, l'ha fatto nel momento in cui queste venivano sbloccate, e non in un secondo momento. Le schede che non sono state aperte subito, in genere non sono state aperte neanche dopo.
+Un altro dato interessante riguarda le modalità di lettura delle schede informative, cioè il momento in cui il giocatore accede alle informazioni sbloccate. Nonostante sia possibile accedere ai contenuti sbloccati anche in un secondo momento, la maggior parte dei tester che ha aperto le schede informative, l'ha fatto nel momento in cui queste venivano sbloccate, e non in un secondo momento. Le schede che non sono state aperte subito, in genere non sono state aperte neanche dopo.
 
 Vediamo, infine, l'analisi sulla raccolta dei collezionabili opzionali, confrontando i risultati del primo test con quelli del secondo.
 
 Nota bene: alcune stelle sono state riposizionate prima del secondo test, soprattutto nel primo livello, un po meno nel secondo, mentre il terzo è rimasto invariato.
 
-Le percentuali di raccoglimento del secondo test sono nettamente superiori, risultato in buona parte da attribuire ad un flow di gioco più lineare, con feedback aggiunti ove mancavano nel primo test. Ha influito su questi dati anche l'uso di device ad hoc per l'utente inesperto dell'uso di mouse e tastiera. Un'altra possibile motivazione di questo risultato, può essere quella che il giocatore medio del secondo test aveva un'età (16 anni) superiore al giocatore del primo test (12-14 anni), presentando una dimestichezza ed esperienza di gioco in media superiore.
+Le percentuali di raccoglimento del secondo test sono nettamente superiori, risultato in buona parte da attribuire ad un flow di gioco più lineare e ai feedback aggiunti ove mancavano nel primo test. Ha influito su questi dati anche l'uso di device ad hoc per l'utente inesperto dell'uso di mouse e tastiera, ciò ha permesso agli utenti di avere maggiore coordinazione e precisione ove necessario. Un'altra possibile motivazione dell'alto numero di collezionabili presi, può essere il fatto che il giocatore medio del secondo test aveva un'età (16 anni) superiore al giocatore del primo test (12-14 anni), presentando una dimestichezza ed esperienza di gioco in media superiori.
 
 \begin{figure}[h]
-\centerline{\includegraphics[scale=0.65]{images/risultati/test-stelle.png}}
+\centerline{\includegraphics[scale=0.6]{images/risultati/test-stelle.png}}
 \caption{Grafico della percentuale dei giocatori che hanno raccolto le stelle, durante primo e secondo test.}
 \label{fig:test-stelle}
 \end{figure}
