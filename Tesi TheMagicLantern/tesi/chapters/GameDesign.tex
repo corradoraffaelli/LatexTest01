@@ -94,7 +94,7 @@ La bidirezionalità fa sì che il personaggio si giri nel caso venga indicato un
 	\caption{Movimenti di corsa nel prototipo sviluppato}
 	\label{fig:platform_corsa}
 \end{figure}
-In \textit{SuperMario Bros.} (riferimento) il personaggio può cambiare direzione, ma la camera non può tornare indietro, quindi, quando il personaggio arriva al bordo sinistro, è come se sbatta contro un muro invisibile.
+In \textit{SuperMario Bros.} (Capitolo~\ref{sec:stato_arte_super_mario}) il personaggio può cambiare direzione, ma la camera non può tornare indietro, quindi, quando il personaggio arriva al bordo sinistro, è come se sbatta contro un muro invisibile.
 La tipologia di gioco definita \textit{Endless Runner} invece, evita il problema impedendo al giocatore di invertire la direzione, nella maggior parte dei casi imponendo una corsa indipendente dall’input del giocatore o in altri casi semplicemente rallentabile o accelerabile (Figura~\ref{fig:platform_corsa_reali}).
 
 \begin{figure}%[h]
@@ -126,7 +126,7 @@ Oltre alle meccaniche di corsa e salto, abbiamo dato la possibilità al personag
 	\label{fig:platform_scala_piattaforme}
 \end{figure}
 
-Le meccaniche di salto, controllo del personaggio in aria ed utilizzo scale sono state ispirate dal videogioco \textit{Braid} (riferimento?), anche qui infatti il salto fornisce una forza indipendente dalla pressione del tasto e la possibilità di controllare il personaggio in caduta è una meccanica importante di gioco, anche se, rispetto a \textit{Braid}, la forza impressa dal salto risulta meno forte e la gravità in caduta più espressiva, i movimenti in \textit{Braid} appaiono più naturali, nel nostro caso invece più repentini ed eccessivi.
+Le meccaniche di salto, controllo del personaggio in aria ed utilizzo scale sono state ispirate dal videogioco \textit{Braid} (Capitolo~\ref{sec:stato_arte_braid}), anche qui infatti il salto fornisce una forza indipendente dalla pressione del tasto e la possibilità di controllare il personaggio in caduta è una meccanica importante di gioco, anche se, rispetto a \textit{Braid}, la forza impressa dal salto risulta meno forte e la gravità in caduta più espressiva, i movimenti in \textit{Braid} appaiono più naturali, nel nostro caso invece più repentini ed eccessivi.
 
 Sono state incluse nel gioco anche delle piattaforme mobili (Figura~\ref{fig:platform_piattaforme_mobili}). Queste hanno un movimento lineare tra due punti, uno dei quali raggiungibile dal personaggio, mentre l’altro si pone come obiettivo finale del movimento. Sono un elemento che mette alla prova le abilità di tempismo e di concentrazione del giocatore. Tali piattaforme risultano attraversabili dal basso verso l’alto, questo per permettere una maggiore libertà di approccio all’utente.
 Durante i test effettuati, abbiamo notato che, spesso, i giocatori fanno fatica a comprendere i momenti esatti in cui la piattaforma cambia di direzione. Si sta perciò valutando se, nel prodotto finale non possa essere utile introdurre degli elementi che, graficamente, rappresentino dei limiti di inizio e fine corsa.
@@ -361,7 +361,7 @@ Inizialmente si ipotizzava di far utilizzare la Lanterna assegnandole uno specif
 La soluzione che abbiamo ritenuto più valida è stata quindi quella di permettere al giocatore di poter mirare attraverso la pressione di un tasto, e proiettare al suo rilascio. In questo stesso momento la lanterna magica viene lasciata a terra e continua a proiettare, fino a che il giocatore non decida di riprenderla di nuovo in mano.
 Il momento dedicato alla mira, sfrutta l’utilizzo di una sagoma dell’elemento che si andrà a proiettare, così da dare immediatamente al giocatore la sensazione di come e dove verrà creato l’oggetto dello scenario.
 Il concetto di mira è stato sviluppato parallelamente all’attuale implementazione di camera e puntatore, in quanto la sagoma dell’oggetto da proiettare compare esattamente nella stessa posizione del puntatore, così da non confondere l’utente con metafore di gioco differenti.
-Come si può vedere in Figura~\ref{fig:meccaniche_precinema_swapper}, per tale meccanica ci si è ispirati al videogioco The Swapper (riferimento).
+Come si può vedere in Figura~\ref{fig:meccaniche_precinema_swapper}, per tale meccanica ci si è ispirati al videogioco The Swapper (Capitolo~\ref{sec:stato_arte_swapper}).
 
 \begin{figure}%[h]
 	\centering
@@ -390,7 +390,7 @@ Le meccaniche di gioco primarie, come abbiamo analizzato, sono quindi quelle \te
 Tali elementi di gameplay sono stati però affiancati da altre meccaniche ispirate al contesto del \textit{pre-cinema}.
 Tra gli elementi \textit{serious} del nostro videogioco, abbiamo incluso la possibilità di raccogliere degli oggetti e quindi lo sbloccare le relative schede informative che ne descrivono la storia, l’utilizzo ed eventuali curiosità a riguardo (Capitolo~\ref{sec:schede_informative}).
 
-Nei test effettuati (riferimento) abbiamo però notato come i ragazzi fossero poco attratti dall’apertura delle schede informative e quindi dall’apprendere determinati concetti che riteniamo importanti per l’esperienza di gioco e per l’obiettivo di Tesi prefissato.
+Nei test effettuati (Capitolo~\ref{chap:testing}) abbiamo però notato come i ragazzi fossero poco attratti dall’apertura delle schede informative e quindi dall’apprendere determinati concetti che riteniamo importanti per l’esperienza di gioco e per l’obiettivo di Tesi prefissato.
 Abbiamo quindi deciso di inserire diversi elementi aggiuntivi, tra questi alcune meccaniche di gioco, studiate appositamente, per rendere più interessante il raccoglimento di tali oggetti e quindi stimolare curiosità per l’apertura delle relative schede informative.
 
 \paragraph{Camera Oscura}
@@ -440,9 +440,9 @@ Le stelle sono invece elementi raggiungibili in maniera più difficile, richiedo
 
 È importante chiarire che sia i collezionabili che le stelle non risultano essenziali alla conclusione di un livello. Il giocatore può arrivare anche al termine senza averne raccolti. L’interazione del personaggio con questi elementi non influisce sul naturale svolgimento della partita e non genera nessuna conseguenza sullo scenario di gioco, esclusi i casi di collezionabili contestualizzati, che abbiamo precedentemente analizzato (Capitolo~\ref{sec:meccaniche_precinema}). Stiamo comunque valutando la possibilità di inserire alcuni di questi elementi in maniera obbligatoria, o per insegnare al giocatore determinate meccaniche di gioco, o per spingerlo a leggere alcune schede informative.
 
-Le stelle sono elementi presenti in moltissimi altri giochi, primo fra tutti SuperMario(riferimento). Il giocatore è naturalmente spinto a raccoglierle, senza bisogno di ulteriori spiegazioni.
+Le stelle sono elementi presenti in moltissimi altri giochi, primo fra tutti SuperMario (Capitolo~\ref{sec:stato_arte_super_mario}). Il giocatore è naturalmente spinto a raccoglierle, senza bisogno di ulteriori spiegazioni.
 
-Valiant Hearts (riferimento) è il videogioco a cui ci siamo maggiormente ispirati per la componente \textit{Serious}, quindi, anche per la struttura dei collezionabili, così come sono stati descritti, abbiamo cercato di rifarci al gioco. Anche in Valiant Hearts il raccoglimento di determinati oggetti porta allo sbloccare schede informative che possono essere consultate liberamente dall’utente.
+Valiant Hearts (Capitolo~\ref{sec:stato_arte_valiant_hearts}) è il videogioco a cui ci siamo maggiormente ispirati per la componente \textit{Serious}, quindi, anche per la struttura dei collezionabili, così come sono stati descritti, abbiamo cercato di rifarci al gioco. Anche in Valiant Hearts il raccoglimento di determinati oggetti porta allo sbloccare schede informative che possono essere consultate liberamente dall’utente.
 Come mostrato in Figura~\ref{fig:rigiocabilita_UI_hub}, il numero di collezionabili e stelle raccolte, viene mostrato nell’hub centrale (Capitolo~\ref{par:hub_centrale}) al passaggio del personaggio di fronte alle varie porte che conducono ai livelli. Il giocatore quindi, vedendo che un livello già giocato non risulta interamente completato, è naturalmente spinto a rigiocarlo, cercando di scoprirne tutti i segreti e quindi portarlo a termine.
 
 \begin{figure}%[h]
@@ -545,7 +545,7 @@ Il passo successivo è stato quindi quello di studiare un nuovo personaggio, ma 
 
 Come già spiegato nel capitolo relativo al design per le ambientazioni, per quanto riguarda gli \textit{asset} sviluppati per il prototipo, ci siamo limitati a quegli elementi essenziali per la comprensibilità, l’usabilità e quindi verifica delle meccaniche di gioco.
 
-Per quanto riguarda il personaggio quindi, abbiamo utilizzato i disegni forniti gratuitamente da David Hellman \cite{DavidHellmanSite} ed utilizzati per il videogioco Braid (riferimento), da lui ideato e sviluppato.
+Per quanto riguarda il personaggio quindi, abbiamo utilizzato i disegni forniti gratuitamente da David Hellman \cite{DavidHellmanSite} ed utilizzati per il videogioco Braid (Capitolo~\ref{sec:stato_arte_braid}), da lui ideato e sviluppato.
 Attualmente quindi, anche per quanto riguarda il personaggio principale, l’aspetto ottenuto, non è attinente con ciò che verrà mostrato nel prodotto finale.
 
 \subsection{Nemici}
@@ -704,7 +704,7 @@ Dopo un’attenta analisi, si è preferito eliminare la prima sezione di gioco i
 
 Si è quindi deciso di fare in modo che l’esperienza del giocatore non fosse direttamente collegata all’idea di museo, ma che ne richiamasse alcuni aspetti in maniera indiretta.
 L’avventura avrebbe quindi assunto una caratterizzazione differente, con connotazioni pesantemente esperienziali. Si è pensato di abbandonare l’idea di sviluppare una ricca componente di \textit{storyline}, ma far sì che l’esperienza vissuta dal giocatore fosse data dall’immersività nel mondo di gioco e dalle sensazioni che questo gli avesse potuto trasmettere.
-Per questo tipo di approccio ci siamo in parte ispirati a videogiochi come LIMBO (riferimento), in cui si controlla un ragazzino, di cui si intuisce solo la sagoma. Ci si trova in un mondo, che ha l’aspetto di una foresta, ricco di pericoli, che metteranno a rischio l’incolumità del personaggio (Figura~\ref{fig:level_design_limbo}). Non è chiaro il perché il ragazzo si trovi in una tale situazione, ma è evidente che deve cercare di uscirne. L’esperienza di gioco è data appunto dalle sensazioni provate dal giocatore, garantite da un’ambientazione ricca di fascino e da meccaniche efficaci.
+Per questo tipo di approccio ci siamo in parte ispirati a videogiochi come LIMBO, in cui si controlla un ragazzino, di cui si intuisce solo la sagoma. Ci si trova in un mondo, che ha l’aspetto di una foresta, ricco di pericoli, che metteranno a rischio l’incolumità del personaggio (Figura~\ref{fig:level_design_limbo}). Non è chiaro il perché il ragazzo si trovi in una tale situazione, ma è evidente che deve cercare di uscirne. L’esperienza di gioco è data appunto dalle sensazioni provate dal giocatore, garantite da un’ambientazione ricca di fascino e da meccaniche efficaci.
 
 \begin{figure}%[h]
 	\centering
@@ -753,7 +753,7 @@ L’hub è stato quindi esteso, prevedendo l’inclusione di una sezione inizial
 
 Il prototipo è strutturato in 3 livelli. Nel primo vengono presentate le meccaniche \textit{platform}, il secondo è quello in cui si raccoglie la lanterna magica e quindi c’è la presenza del vero \textit{game-changer}, mentre il terzo mostra le vere potenzialità della lanterna magica attraverso un utilizzo più curioso.
 
-Verranno di seguito analizzati i 3 livelli in dettaglio. È importante ricordare che, poiché sono state effettuate due fasi di testing del prodotto (riferimento), questo ha assunto due forme leggermente diverse. Per il secondo testing infatti, sono state corrette alcune sezioni ed altre sono state accantonate, seppur ritenute di buon valore, per mettere in evidenza solamente gli elementi che abbiamo ritenuto opportuno sottolineare durante il test. Alcune sezioni analizzate in seguito potrebbero essere presenti nella prima versione del prototipo ed essere assenti nella seconda, o viceversa.
+Verranno di seguito analizzati i 3 livelli in dettaglio. È importante ricordare che, poiché sono state effettuate due fasi di testing del prodotto (Capitolo~\ref{chap:testing}), questo ha assunto due forme leggermente diverse. Per il secondo testing infatti, sono state corrette alcune sezioni ed altre sono state accantonate, seppur ritenute di buon valore, per mettere in evidenza solamente gli elementi che abbiamo ritenuto opportuno sottolineare durante il test. Alcune sezioni analizzate in seguito potrebbero essere presenti nella prima versione del prototipo ed essere assenti nella seconda, o viceversa.
 
 \paragraph{Livello 1}
 \label{par:livello1}
@@ -932,7 +932,7 @@ Il gioco, all’inizio dello sviluppo, si poneva come obiettivo quello di propor
 \paragraph{Tipologie e sbloccaggio schede.}
 \label{par:tipologie_schede}
 
-Attualmente, seguendo l’idea di design originale ed ispirandoci al lavoro sul videogioco Valiant Hearts (riferimento), abbiamo deciso di utilizzare due differenti tipologie di schede informative.
+Attualmente, seguendo l’idea di design originale ed ispirandoci al lavoro sul videogioco Valiant Hearts (Capitolo~\ref{sec:stato_arte_valiant_hearts}), abbiamo deciso di utilizzare due differenti tipologie di schede informative.
 
 Le schede del primo tipo si ottengono raccogliendo oggetti collezionabili direttamente interagendo con essi nello scenario. Le informazioni sbloccate riguardano quindi l’elemento che è possibile osservare, in primo luogo, nella schermata di gioco. 
 
@@ -942,7 +942,7 @@ L’altra tipologia di schede riguarda quelle che abbiamo voluto definire “Cur
 \paragraph{Struttura delle schede informative.}
 \label{par:struttura_schede}
 
-Anche per la struttura delle schede informative ci siamo ispirati a quella sviluppata per il videogioco Valiant Hearts (riferimento), un esempio è mostrato in Figura~\ref{fig:scheda_valiant}. Questo contengono una descrizione generale dell’oggetto o del fatto trattato nella parte inferiore dello schermo ed una serie di immagini scorribili nella porzione principale.
+Anche per la struttura delle schede informative ci siamo ispirati a quella sviluppata per il videogioco Valiant Hearts (Capitolo~\ref{sec:stato_arte_valiant_hearts}), un esempio è mostrato in Figura~\ref{fig:scheda_valiant}. Questo contengono una descrizione generale dell’oggetto o del fatto trattato nella parte inferiore dello schermo ed una serie di immagini scorribili nella porzione principale.
 Le descrizioni sono chiaramente pensate e studiate per non essere eccessivamente didascaliche, ma il loro obiettivo è quello di enfatizzare le caratteristiche salienti di ogni elemento, senza risultare troppo noiose, pesanti o ripetitive. Risulta evidente come, anche il lavoro sul testo da inserire nelle schede non è da sottovalutare ed ha richiesto un difficile processo di analisi e di design.
 
 \begin{figure}%[h]
@@ -1064,7 +1064,7 @@ In Figura~\ref{fig:interfaccia_ingame} è possibile osservare i due elementi di 
 Oltre all’interfaccia sempre presente a schermo, abbiamo inserito anche degli elementi a scomparsa.
 
 È stato già citato il comando a schermo per aprire le schede informative, una volta sbloccato un nuovo contenuto. Questo viene mostrato nella parte centrale dello schermo, insieme ad una pagina di un libro. Il comando pulsa per qualche secondo, e si va quindi a sovrapporre al libro.
-Nel gioco, come già descritto, esistono due tipologie di contenuti sbloccati, quella relativa ad oggettistica e quella che si occupa delle curiosità. Precedentemente, il comando da premere per aprire le schede informative, veniva mostrato esclusivamente nel momento in cui si sbloccava il contenuto relativo ad una curiosità, mentre il comando pulsante era relegato all’angolo in alto a destra. In seguito al primo testing effettuato (riferimento), si è notato come le schede informative delle curiosità sono state aperte con una percentuale molto maggiore. Abbiamo quindi deciso di unificare le due interfacce, utilizzando e migliorando quella che è risultata più efficace.
+Nel gioco, come già descritto, esistono due tipologie di contenuti sbloccati, quella relativa ad oggettistica e quella che si occupa delle curiosità. Precedentemente, il comando da premere per aprire le schede informative, veniva mostrato esclusivamente nel momento in cui si sbloccava il contenuto relativo ad una curiosità, mentre il comando pulsante era relegato all’angolo in alto a destra. In seguito al primo testing effettuato (Capitolo~\ref{sec:testing_primo_test}), si è notato come le schede informative delle curiosità sono state aperte con una percentuale molto maggiore. Abbiamo quindi deciso di unificare le due interfacce, utilizzando e migliorando quella che è risultata più efficace.
 Sia che venga raccolto un oggetto o che venga sbloccata una curiosità, semplicemente tramite \textit{trigger}, abbiamo quindi usato la medesima interfaccia, mostrata in Figura~\ref{fig:interfaccia_oggetti}.
 
 Mentre i contenuti delle curiosità vengono raccolti automaticamente dal giocatore durante l’avanzamento nei livelli, quelli relativi all’oggettistica possono essere evitati. Abbiamo quindi ritenuto utile mostrare al giocatore il contenuto sbloccato in relazione alla loro totalità. Nella parte destra dello schermo quindi, quando si raccoglie un oggetto, compare una barra laterale che mostra cosa sia stato appena sbloccato.
@@ -1086,7 +1086,7 @@ Questi elementi sono anche presenti nell’hub centrale (Capitolo~\ref{par:hub_c
 È possibile osservare l'interfaccia dell'oggetto raccolto e della relativa barra laterale in Figura~\ref{fig:interfaccia_oggetti}.
 
 Il design dell’interfaccia delle schede informative è risultato cruciale per lo sviluppo di un prodotto di buona qualità, in quanto ricoprono una grande importanza per il gioco creato, viste le sue finalità.
-Per la struttura ci siamo ampliamente ispirati al modello fornito dal videogioco Valiant Hearts (riferimento), già trattato nel Capitolo~\ref{par:struttura_schede}, poiché utilizza una metodologia di ottenimento dei contenuti molto simile a quella sviluppata.
+Per la struttura ci siamo ampliamente ispirati al modello fornito dal videogioco Valiant Hearts (Capitolo~\ref{sec:stato_arte_valiant_hearts}), già trattato nel Capitolo~\ref{par:struttura_schede}, poiché utilizza una metodologia di ottenimento dei contenuti molto simile a quella sviluppata.
 La soluzione proposta è mostrata in Figura~\ref{fig:interfaccia_schede}.
 
 \begin{figure}%[t]
